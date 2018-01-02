@@ -15,6 +15,8 @@ export const logOut = (user) => {
   return (dispatch) => {
     return SessionApi.logOut().then((user) => {
       dispatch({type: RECEIVE_CURRENT_USER, user});
+    }, (errors) => {
+      dispatch({type: RECEIVE_ERRORS, errors: errors.responseJSON});
     });
   };
 };
@@ -24,28 +26,8 @@ export const newUser = (user) => {
   return (dispatch) => {
     return SessionApi.newUser(user).then((user) => {
       dispatch({type: RECEIVE_CURRENT_USER, user});
+    }, (errors) => {
+      dispatch({type: RECEIVE_ERRORS, errors: errors.responseJSON});
     });
   };
 };
-
-// export const signup = user => dispatch => (
-//   APIUtil.signup(user).then(user => (
-//     dispatch(receiveCurrentUser(user))
-//   ), err => (
-//     dispatch(receiveErrors(err.responseJSON))
-//   ))
-// );
-//
-// export const login = user => dispatch => (
-//   APIUtil.login(user).then(user => (
-//     dispatch(receiveCurrentUser(user))
-//   ), err => (
-//     dispatch(receiveErrors(err.responseJSON))
-//   ))
-// );
-
-
-// logout() (thunk action creator)
-// signup(user) (thunk action creator)
-// receiveCurrentUser(currentUser) (regular action creator)
-// receiveErrors(errors) (regular action creator)

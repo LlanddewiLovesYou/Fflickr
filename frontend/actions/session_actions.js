@@ -11,13 +11,14 @@ export const logIn = (user) => {
   };
 };
 
-export const logout = () => {
+export const logOut = (user) => {
   return (dispatch) => {
-    return SessionApi.logout().then(() => {
-      dispatch({type: RECEIVE_CURRENT_USER, user: null});
+    return SessionApi.logOut().then((user) => {
+      dispatch({type: RECEIVE_CURRENT_USER, user});
     });
   };
 };
+
 
 export const newUser = (user) => {
   return (dispatch) => {
@@ -26,6 +27,24 @@ export const newUser = (user) => {
     });
   };
 };
+
+// export const signup = user => dispatch => (
+//   APIUtil.signup(user).then(user => (
+//     dispatch(receiveCurrentUser(user))
+//   ), err => (
+//     dispatch(receiveErrors(err.responseJSON))
+//   ))
+// );
+//
+// export const login = user => dispatch => (
+//   APIUtil.login(user).then(user => (
+//     dispatch(receiveCurrentUser(user))
+//   ), err => (
+//     dispatch(receiveErrors(err.responseJSON))
+//   ))
+// );
+
+
 // logout() (thunk action creator)
 // signup(user) (thunk action creator)
 // receiveCurrentUser(currentUser) (regular action creator)

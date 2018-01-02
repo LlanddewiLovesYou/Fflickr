@@ -22,3 +22,15 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+
+webpack
+react
+react-dom
+react-router-dom
+redux
+react-redux
+babel-core
+babel-loader
+babel-preset-react
+babel-preset-es2015
+lodash (optional)

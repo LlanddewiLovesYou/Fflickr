@@ -24,7 +24,7 @@ const mapStateToProps = (state, ownProps) => {
   }
   return {
     loggedIn: state.currentUser,
-    errors: [],
+    errors: state.errors.session,
     formType,
   };
 };
@@ -40,7 +40,7 @@ const mapDispatchToProps = (dispatch, ownProps) => {
   }
 
   return {
-    processForm: (user) => processForm(user)
+    processForm: (user) => dispatch(processForm(user))
   };
 };
 

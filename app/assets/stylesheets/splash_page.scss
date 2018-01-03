@@ -1,0 +1,46 @@
+
+.bg {
+  background-color: #042d70;
+  /* Set rules to fill background */
+  min-height: 100%;
+  min-width: 1024px;
+
+  /* Set up proportionate scaling */
+  width: 100%;
+  height: auto;
+
+  /* Set up positioning */
+  position: fixed;
+  top: 0;
+  left: 0;
+
+
+  flex-direction: column;
+  // justify-content: flex-start;
+}
+
+.signup-text-button {
+  text-decoration: none;
+  color: black;
+  background-color: white;
+  font-weight: normal;
+  font-size: 25px;
+  // justify-content: flex-end;
+  padding: 15px 50px;
+  border: 1px solid black;
+  border-radius: 2px;
+  font-family: sans-serif;
+}
+
+.inspiration-text {
+  font-family: sans-serif;
+  font-size: 50px;
+  color: white;
+
+}
+.splash-text {
+  font-family: sans-serif;
+  font-size: 25px;
+  color: white;
+
+}

@@ -24,6 +24,7 @@ class SessionForm extends React.Component {
   }
 
   handleSubmit(e) {
+
     e.preventDefault();
     const user = this.state;
     this.props.processForm({user});
@@ -38,6 +39,7 @@ class SessionForm extends React.Component {
   // }
 
   renderErrors() {
+    
     return(
       <ul>
         {this.props.errors.map((error, i) => (
@@ -53,8 +55,7 @@ class SessionForm extends React.Component {
     return (
       <div className="login-form-container">
         <form onSubmit={this.handleSubmit} className="login-form-box">
-          <p>Find your inspiration.</p>
-          <p>Join the Flickr community, home to tens of billions of photos and 2 million groups.</p>
+
           <br/>
           {this.renderErrors()}
           <div className="login-form">

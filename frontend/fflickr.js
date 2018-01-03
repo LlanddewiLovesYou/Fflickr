@@ -6,10 +6,11 @@ import configureStore from './store/store';
 
 document.addEventListener('DOMContentLoaded', () => {
   const root = document.getElementById('root');
-  const store = configureStore();
-  // window.login = SessionAPI.login;
-  // window.logout = SessionAPI.logout;
-  // window.newUser = SessionAPI.newUser;
+  const preloadedState = { session: { currentUser: window.currentUser } };
+  const store = configureStore(preloadedState);
+  window.login = SessionAPI.login;
+  window.logout = SessionAPI.logout;
+  window.newUser = SessionAPI.newUser;
   window.getState = store.getState;
   window.dispatch = store.dispatch;
   ReactDOM.render(<Root store={ store }/>, root);

@@ -13,8 +13,8 @@ export const logIn = (user) => {
 
 export const logOut = (user) => {
   return (dispatch) => {
-    return SessionApi.logOut().then((user) => {
-      dispatch({type: RECEIVE_CURRENT_USER, user});
+    return SessionApi.logout().then((user) => {
+      dispatch({type: RECEIVE_CURRENT_USER, user: {username: null, password: null}});
     }, (errors) => {
       dispatch({type: RECEIVE_ERRORS, errors: errors.responseJSON});
     });

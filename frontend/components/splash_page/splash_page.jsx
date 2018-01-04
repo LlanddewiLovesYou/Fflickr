@@ -4,7 +4,6 @@ import {AuthNavbar} from '../auth/auth_navbar';
 import {connect} from 'react-redux';
 
 const mapStateToProps = (state) => {
-  debugger
   return {
     currentUser: state.session.currentUser
   };
@@ -12,11 +11,9 @@ const mapStateToProps = (state) => {
 
 
 const SplashPage = (props) => {
-  debugger
   let button = <Link to="/signup" className='signup-text-button'>Sign up</Link>;
 
   if (props.currentUser) {
-    debugger
     button = null;
   }
 

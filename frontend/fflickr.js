@@ -13,10 +13,10 @@ document.addEventListener('DOMContentLoaded', () => {
       preloadedState = { session: { currentUser: null } };
     }
   const store = configureStore(preloadedState);
-  window.login = SessionAPI.login;
-  window.logout = SessionAPI.logout;
-  window.newUser = SessionAPI.newUser;
-  window.getState = store.getState;
-  window.dispatch = store.dispatch;
+  // window.login = SessionAPI.login;
+  // window.logout = SessionAPI.logout;
+  // window.newUser = SessionAPI.newUser;
+  // window.getState = store.getState;
+  // window.dispatch = store.dispatch;
   ReactDOM.render(<Root store={ store }/>, root);
 });

@@ -2,7 +2,7 @@ import React from 'react';
 import GreetingContainer from './auth/greeting_container';
 import Greeting from './auth/greeting';
 import {Route, Redirect, Switch, Link, HashRouter} from 'react-router-dom';
-import SessionFormContainer from './session_form_container';
+import SessionFormContainer from './auth/session_form_container';
 import {AuthRoute} from '../util/route_util';
 import ShowContainer from './photos/show_container';
 import {Photos} from './photos/photos';

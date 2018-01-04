@@ -24,8 +24,8 @@ const SplashPage = (props) => {
       <div className="inspiration-wrapper">
         <h1 className='inspiration-text'> Find your inspiration. </h1>
         <h1 className='splash-text'> Join the Flickr community, home to tens of billions of <br></br> photos and 2 million groups. </h1>
+        {button}
       </div>
-      {button}
     </main>
   );
 };

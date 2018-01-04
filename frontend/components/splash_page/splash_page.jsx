@@ -1,6 +1,6 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
-import {AuthNavbar} from './auth_navbar';
+import {AuthNavbar} from '../auth/auth_navbar';
 
 export const SplashPage = () => {
   return (

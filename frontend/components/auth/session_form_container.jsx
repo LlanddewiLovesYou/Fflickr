@@ -11,7 +11,7 @@
 import React from "react";
 import {connect} from 'react-redux';
 import SessionForm from './session_form';
-import {logIn, newUser} from '../actions/session_actions';
+import {logIn, newUser} from '../../actions/session_actions';
 import { withRouter } from 'react-router-dom';
 
 const mapStateToProps = (state, ownProps) => {

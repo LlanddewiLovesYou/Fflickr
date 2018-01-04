@@ -3,7 +3,7 @@
 // mapDispatchToProps accordingly.
 import Greeting from './greeting';
 import {connect} from 'react-redux';
-import {logOut} from '../actions/session_actions';
+import {logOut} from '../../actions/session_actions';
 
 const mapStateToProps = (state) => {
   return {

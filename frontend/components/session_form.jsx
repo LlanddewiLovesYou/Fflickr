@@ -39,7 +39,7 @@ class SessionForm extends React.Component {
   // }
 
   renderErrors() {
-    
+
     return(
       <ul>
         {this.props.errors.map((error, i) => (
@@ -76,4 +76,4 @@ class SessionForm extends React.Component {
   }
 }
 
-export default withRouter(SessionForm);
+export default SessionForm;

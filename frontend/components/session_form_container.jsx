@@ -12,6 +12,7 @@ import React from "react";
 import {connect} from 'react-redux';
 import SessionForm from './session_form';
 import {logIn, newUser} from '../actions/session_actions';
+import { withRouter } from 'react-router-dom';
 
 const mapStateToProps = (state, ownProps) => {
   let user;
@@ -44,4 +45,4 @@ const mapDispatchToProps = (dispatch, ownProps) => {
   };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(SessionForm);
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(SessionForm));

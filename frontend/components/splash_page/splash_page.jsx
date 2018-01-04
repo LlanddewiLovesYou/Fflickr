@@ -1,8 +1,25 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
 import {AuthNavbar} from '../auth/auth_navbar';
+import {connect} from 'react-redux';
 
-export const SplashPage = () => {
+const mapStateToProps = (state) => {
+  debugger
+  return {
+    currentUser: state.session.currentUser
+  };
+};
+
+
+const SplashPage = (props) => {
+  debugger
+  let button = <Link to="/signup" className='signup-text-button'>Sign up</Link>;
+
+  if (props.currentUser) {
+    debugger
+    button = null;
+  }
+
   return (
     <main className='bg'>
 
@@ -10,10 +27,10 @@ export const SplashPage = () => {
       <div className="inspiration-wrapper">
         <h1 className='inspiration-text'> Find your inspiration. </h1>
         <h1 className='splash-text'> Join the Flickr community, home to tens of billions of <br></br> photos and 2 million groups. </h1>
-
-        <Link to="/signup" className='signup-text-button'>Sign up</Link>
       </div>
-
+      {button}
     </main>
   );
 };
+
+export default connect(mapStateToProps, null)(SplashPage);

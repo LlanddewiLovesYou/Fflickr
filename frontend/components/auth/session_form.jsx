@@ -4,10 +4,11 @@ import { Link, withRouter } from 'react-router-dom';
 class SessionForm extends React.Component {
   constructor(props) {
     super(props);
+    let form;
     this.state = {
       username: '',
-      password: ''
-    };
+      password: '',
+    form: ''};
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
@@ -52,26 +53,38 @@ class SessionForm extends React.Component {
   }
 
   render() {
+    let formTitle;
+    if (this.props.formType === 'login'){
+      formTitle = 'Sign In';
+    } else if (this.props.formType === 'signup') {
+      formTitle = 'Sign Up';
+    }
+
     return (
+   <main>
       <div className="login-form-container">
         <form onSubmit={this.handleSubmit} className="login-form-box">
 
           <br/>
           {this.renderErrors()}
           <div className="login-form">
+            <h1 className='yahuu-logo'>YAHUU!</h1>
+            <h1 className='login-text'>{formTitle}</h1>
             <br/>
-            <label>Username:
-              <input type="text" value={this.state.username} onChange={this.update('username')} className="login-input"/>
-            </label>
+
+                <input placeholder='Username' type="text" value={this.state.username} onChange={this.update('username')} className="login-input"/>
+
             <br/>
-            <label>Password:
-              <input type="password" value={this.state.password} onChange={this.update('password')} className="login-input"/>
-            </label>
+
+              <input placeholder='Password' type="password" value={this.state.password} onChange={this.update('password')} className="login-input"/>
+
             <br/>
-            <input type="submit" value="Submit" />
+            <input type="submit" value={formTitle} className='login-button'/>
+            <h1>Don't have an account? Click <Link to='/signup'>Here</Link></h1>
           </div>
         </form>
       </div>
+    </main>
     );
   }
 }

@@ -1,0 +1,47 @@
+.user-cover-image {
+  width: 100%;
+  height: 300px;
+  background-image: url('https://i.imgur.com/JGT50jf.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+}
+
+.user-cover-image .username {
+  font-family: sans-serif;
+  color: white;
+  font-size: 35px;
+  margin-left:200px;
+  margin-top: 150px;
+}
+
+.user-cover-image .joined {
+  font-family: sans-serif;
+  color: white;
+  font-size: 20px;
+  margin-left:200px;
+
+}
+
+.user-info-wrapper {
+  margin-top: 50px;
+  border: 1px solid black;
+  width: 1500px;
+  margin-left: 200px;
+  height: 400px;
+  display: flex;
+}
+
+.user-info-item {
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+}
+
+.user-info-field {
+  padding: 15px;
+}

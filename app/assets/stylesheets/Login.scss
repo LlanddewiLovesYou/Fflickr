@@ -1,0 +1,88 @@
+.yahuu-logo {
+  padding: 10px;
+  font-family: 'Marcellus', serif;
+  color: purple;
+  font-size: 35px;
+  margin-bottom: 50px;
+  // font-style: italic;
+}
+
+.login-form-box {
+  height: 500px;
+  width: 400px;
+  margin: 20px;
+  box-shadow: 1px 1px 1px #b3b6bc;
+  border: 1px solid #d2d5db;
+  margin-left: 70px;
+}
+
+.login-form-container {
+  display: flex;
+  justify-content: flex-end;
+  // margin: 50px;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 40px;
+}
+
+.login-form .label {
+
+}
+
+.login-input {
+ height: 35px;
+ width: 250px;
+ border: none;
+ border-bottom: 2px solid #b3b6bc;
+ color: #b3b6bc;
+ font-size: 15px;
+}
+
+.login-input:focus {
+  height: 35px;
+  width: 250px;
+  border: none;
+  border-bottom: 2px solid #4286f4;
+  color: #b3b6bc;
+  font-size: 15px;
+}
+
+.login-wrapper {
+  font-family: sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: top;
+}
+
+.login-text-wrapper {
+  width: 550px;
+  margin: 100px;
+  line-height: 2em;
+
+}
+
+.login-text {
+  font-size: 1.23529em;
+  font-weight: bold;
+}
+
+.login-subtext {
+  font-size: 1.23529em;
+
+}
+
+.login-button {
+  height: 45px;
+  width: 250px;
+  font-family: sans-serif;
+  font-size: 1.23529em;
+  background-color: #4286f4;
+  color: white;
+  border-radius: 3px;
+  margin: 40px;
+}

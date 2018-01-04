@@ -17,11 +17,11 @@ import { withRouter } from 'react-router-dom';
 const mapStateToProps = (state, ownProps) => {
   let user;
   let formType;
-  if (state.session.currentUser) {
-    user = state.session.currentUser;
-    formType = 'login';
-  } else {
+  if (ownProps.location.pathname === '/signup') {
+  
     formType = 'signup';
+  } else {
+    formType = 'login';
   }
   return {
     loggedIn: state.currentUser,
@@ -34,7 +34,7 @@ const mapStateToProps = (state, ownProps) => {
 const mapDispatchToProps = (dispatch, ownProps) => {
   let processForm;
 
-  if (ownProps.location.pathname.slice(1)=== 'signup') {
+  if (ownProps.location.pathname === '/signup') {
     processForm = newUser;
   } else {
     processForm = logIn;

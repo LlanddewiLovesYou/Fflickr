@@ -7,7 +7,7 @@ const Auth = ({ component: Component, path, loggedIn, currentUserId }) => (
     !loggedIn ? (
       <Component {...props} />
     ) : (
-      <Redirect to={`/photos`} />
+      <Redirect to={`/users/show/${currentUserId}`} />
     )
   )} />
 );
@@ -22,11 +22,19 @@ const Protected = ({ component: Component, path, loggedIn }) => (
   )} />
 );
 
-const mapStateToProps = state => (
-  {loggedIn: Boolean(state.session.currentUser),
-    // currentUserId: state.session.currentUser.id || null
+const mapStateToProps = state => {
+  let currentUserId;
+  if (state.session.currentUser) {
+    currentUserId = state.session.currentUser.id
+  } else {
+    currentUserId = null
   }
-);
+
+  return {
+    loggedIn: Boolean(state.session.currentUser),
+    currentUserId
+  }
+};
 
 export const AuthRoute = withRouter(connect(mapStateToProps, null)(Auth));
 

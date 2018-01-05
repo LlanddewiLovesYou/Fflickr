@@ -7,9 +7,9 @@ export const NavBar = () => {
     <div className='navbar'>
         <div className='Navbar-Logo'>Fflickr</div>
           <div className="nav-links">
-            <div><Link to="/users/show/:userId">You</Link></div>
-            <div><Link to="">Explore</Link></div>
-            <div><Link to="">Create</Link></div>
+            <Link to="/users/:userId">You</Link>
+            <Link to="">Explore</Link>
+            <Link to="">Create</Link>
           </div>
         <div className="searchbar"><img src={window.staticImages.searchImage}/>(Coming Soon!)</div>
         <GreetingContainer/>

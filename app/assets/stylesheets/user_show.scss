@@ -28,20 +28,45 @@
 }
 
 .user-info-wrapper {
-  margin-top: 50px;
+  // margin-top: 50px;
   border: 1px solid black;
   width: 1500px;
-  margin-left: 200px;
+  // margin-left: 200px;
   height: 400px;
   display: flex;
+  flex-direction: column;
 }
 
 .user-info-item {
   display: flex;
   justify-content: flex-start;
-  flex-direction: column;
 }
 
 .user-info-field {
   padding: 15px;
+}
+
+.navlink-bar {
+  margin: 50px;
+  // height: 150px;
+}
+
+.navlink-bar .link {
+  margin-left: 50px;
+  color: black;
+  text-decoration: none;
+
+}
+
+.active {
+  margin-left: 50px;
+  color: black;
+  text-decoration: none;
+  border-bottom: 2px solid blue;
+}
+
+.user-show-component {
+  margin: 50px;
+  padding: 25px;
+
 }

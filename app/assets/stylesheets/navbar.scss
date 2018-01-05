@@ -10,8 +10,10 @@
   display: flex;
 }
 
-.nav-links div {
+.nav-links a {
   padding: 20px;
+  color: white;
+  text-decoration: none;
 }
 
 .not_opaque {

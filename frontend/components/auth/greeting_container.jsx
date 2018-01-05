@@ -3,6 +3,7 @@
 // mapDispatchToProps accordingly.
 import Greeting from './greeting';
 import {connect} from 'react-redux';
+import {withRouter} from 'react-router-dom';
 import {logOut} from '../../actions/session_actions';
 
 const mapStateToProps = (state) => {
@@ -19,4 +20,4 @@ const mapDispatchToProps = (dispatch) => {
 
 
 
-export default connect(mapStateToProps, mapDispatchToProps)(Greeting);
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Greeting));

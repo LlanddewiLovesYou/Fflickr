@@ -1,6 +1,6 @@
 import React from "react";
 import {connect} from 'react-redux';
-import UserShowPage from './user_show_page';
+import UserShowPage from './user_show';
 
 const mapStateToProps = (state, ownProps) => {
   return {

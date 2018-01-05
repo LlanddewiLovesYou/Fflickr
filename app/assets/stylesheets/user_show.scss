@@ -48,6 +48,7 @@
 
 .navlink-bar {
   margin: 50px;
+  margin-left: 155px;
   // height: 150px;
 }
 
@@ -66,7 +67,7 @@
 }
 
 .user-show-component {
-  margin: 50px;
-  padding: 25px;
+  display: flex;
+  justify-content: center;
 
 }

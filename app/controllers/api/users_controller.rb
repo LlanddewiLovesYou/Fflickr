@@ -4,10 +4,22 @@ class Api::UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       login(@user)
-      render `api/users/#{@user.id}`
+      render `api/users/user`
     else
       render json: @user.errors.full_messages, status: 422
     end
+  end
+
+  def show
+    @user = User.find(:params[:id])
+    if @user
+      @albums = @user.albums
+      render :show
+    else
+      render json: "User does not exist.", status: 404
+    end
+
+
   end
 
 

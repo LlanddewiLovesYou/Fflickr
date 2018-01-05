@@ -1,0 +1,22 @@
+.album-index-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center
+}
+
+.album-index-wrapper a {
+padding: 10px;
+
+}
+
+.new-album-button {
+  text-decoration: none;
+  color: white;
+  background-color: #4286f4;
+  font-weight: normal;
+  // justify-content: flex-end;
+  padding: 7px;
+  border-radius: 4px;
+  margin: 5px;
+  text-align: center;
+}

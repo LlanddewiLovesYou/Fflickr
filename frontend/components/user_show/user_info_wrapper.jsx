@@ -13,6 +13,7 @@ export const UserInfoWrapper = (props) => {
             <UserInfoItem/>
             <UserInfoItem/>
           </div>
+          <Link to='/'>To Splash Page</Link>
         </span>
     </main>
   );

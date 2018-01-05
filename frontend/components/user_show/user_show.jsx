@@ -3,7 +3,9 @@ import {Link, NavLink, Switch, Route} from 'react-router-dom';
 import {NavBar} from '../misc/navbar';
 import {UserInfoWrapper} from './user_info_wrapper';
 import Photostream from './photostream';
-import AlbumIndex from './album_index'
+import AlbumIndex from './album_index';
+import AlbumForm from '../albums/album_form';
+import Footer from '../misc/footer';
 
 
 const UserShowPage = ({currentUser}) => {
@@ -31,9 +33,10 @@ const UserShowPage = ({currentUser}) => {
           <Route exact path='/users/:userId/info' component={UserInfoWrapper}/>
           <Route exact path='/users/:userId/photos' component={Photostream}/>
           <Route exact path='/users/:userId/albums' component={AlbumIndex}/>
+          <Route exact path='/users/:userId/albums/new' component={AlbumForm}/>
         </div>
 
-
+        
   </main>
   );
 };

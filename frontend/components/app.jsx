@@ -12,6 +12,7 @@ import SplashPage from './splash_page/splash_page';
 import {LoginPage} from './login_page/login_page';
 import {NewUserPage} from './new_user_page/new_user_page';
 import UserShowContainer from './user_show/user_show_container';
+import Footer from './misc/footer';
 
 
 const App = () => (
@@ -26,7 +27,7 @@ const App = () => (
     <Route path="/photos" component={Photos} />
     <Route path="/users/:userId/photos" component={Photos} />
   </Switch>
-
+<Footer/>
 </main>
 );
 

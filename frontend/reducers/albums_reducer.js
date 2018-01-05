@@ -4,12 +4,13 @@ import {RECEIVE_ALBUMS, RECEIVE_ALBUM, REMOVE_ALBUM} from '../actions/album_acti
 
 const albumsReducer = (state = {}, action) => {
   let newState;
+  let USER_ALBUMS;
   switch (action.type) {
-    case RECEIVE_ALBUMS:
+    case RECEIVE_USER:
       newState = merge({}, state, action.albums);
       return newState;
     case RECEIVE_ALBUM:
-      newState = merge({}, state, {[action.album.id]: action.album});
+      newState = merge({}, state, action.album);
       return newState;
     case REMOVE_ALBUM:
       newState = merge({}, state);

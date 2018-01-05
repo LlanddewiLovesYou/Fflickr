@@ -22,13 +22,13 @@ const UserShowPage = ({currentUser}) => {
       </span>
 
         <div className='navlink-bar'>
-          <NavLink to={`/users/${currentUser.id}`} className='link' activeClassName='active'>User Info</NavLink>
+          <NavLink to={`/users/${currentUser.id}/info`} className='link' activeClassName='active'>User Info</NavLink>
           <NavLink to={`/users/${currentUser.id}/photos`} className='link' activeClassName='active'>Photostream</NavLink>
           <NavLink to={`/users/${currentUser.id}/albums`} className='link' activeClassName='active'>Albums</NavLink>
         </div>
 
         <div className='user-show-component'>
-          <Route exact path='/users/:userId' component={UserInfoWrapper}/>
+          <Route exact path='/users/:userId/info' component={UserInfoWrapper}/>
           <Route exact path='/users/:userId/photos' component={Photostream}/>
           <Route exact path='/users/:userId/albums' component={AlbumIndex}/>
         </div>

@@ -5,12 +5,12 @@ const usersReducer = (state = {}, action) => {
   let newState;
   switch (action.type) {
     case RECEIVE_USER:
-      
-      newState = merge({}, state, action.user);
+      newState = merge({}, state);
+      newState[action.user.id] = action.user;
       return newState;
     default:
       return state;
   }
 };
 
-export default AlbumsReducer;
+export default usersReducer;

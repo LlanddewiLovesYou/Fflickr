@@ -1,5 +1,6 @@
 import merge from 'lodash/merge';
 import {RECEIVE_ALBUMS, RECEIVE_ALBUM, REMOVE_ALBUM} from '../actions/album_actions';
+import {RECEIVE_USER} from '../actions/user_actions';
 
 
 const albumsReducer = (state = {}, action) => {
@@ -21,4 +22,4 @@ const albumsReducer = (state = {}, action) => {
   }
 };
 
-export default AlbumsReducer;
+export default albumsReducer;

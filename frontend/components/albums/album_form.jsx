@@ -55,6 +55,8 @@ class AlbumForm extends React.Component {
       formTitle = 'Edit Album';
     }
 
+  
+
     return (
    <main>
       <div className="album-form-container">
@@ -65,7 +67,7 @@ class AlbumForm extends React.Component {
 
           <div className="album-form">
 
-              <h1 className='album-text'>{formTitle}hello</h1>
+              <h1 className='album-text'>{formTitle}</h1>
 
             <br/>
 

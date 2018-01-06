@@ -2,7 +2,7 @@ export const RECEIVE_ALBUMS = 'RECEIVE_ALBUMS';
 export const RECEIVE_ALBUM = 'RECEIVE_ALBUM';
 export const REMOVE_ALBUM = 'REMOVE_ALBUM';
 
-import * as AlbumApi from '../util/album_api_util';
+import * as AlbumApi from '../util/albums_api_util';
 
 // export const requestAlbums = () => {
 //   return (dispatch) => {

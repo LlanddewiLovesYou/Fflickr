@@ -11,7 +11,7 @@ class Api::AlbumsController < ApplicationController
   end
 
   def show
-    @album = Album.find(:params[:id])
+    @album = Album.find(params[:id])
     if @album
       render :show
     else
@@ -21,7 +21,7 @@ class Api::AlbumsController < ApplicationController
 
   def update
     @album = current_user.albums.find(:params[:id])
-    if @album.save
+    if @album.update(album_params)
       render :show
     else
       render json: @album.errors.full_messages, status: 422

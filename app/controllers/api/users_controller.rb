@@ -4,14 +4,14 @@ class Api::UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       login(@user)
-      render `api/users/user`
+      render "api/users/show"
     else
       render json: @user.errors.full_messages, status: 422
     end
   end
 
   def show
-    @user = User.find(:params[:id])
+    @user = User.includes(:albums).find(params[:id])
     if @user
       @albums = @user.albums
       render :show

@@ -3,14 +3,16 @@ import {connect} from 'react-redux';
 import AlbumForm from '../albums/album_form';
 import {createAlbum, updateAlbum} from '../../actions/album_actions';
 import { withRouter } from 'react-router-dom';
+import AlbumComponent from './album_component'
 
 const mapStateToProps = (state, ownProps) => {
   let user;
   let formType;
-  if (ownProps.location.pathname === '/:userId/albums/new') {
-    formType = 'new';
-  } else {
+  debugger
+  if (ownProps.location.pathname === '/albums/new') {
     formType = 'edit';
+  } else {
+    formType = 'new';
   }
   return {
     loggedIn: state.currentUser,

@@ -30,11 +30,12 @@
 .user-info-wrapper {
   // margin-top: 50px;
   border: 1px solid black;
-  width: 1500px;
+  width: 1000px;
   // margin-left: 200px;
   height: 400px;
   display: flex;
   flex-direction: column;
+  justify-content: left;
 }
 
 .user-info-item {
@@ -69,5 +70,6 @@
 .user-show-component {
   display: flex;
   justify-content: center;
-
+  width: 100%;
+  margin-bottom: 400px;
 }

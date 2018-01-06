@@ -19,16 +19,20 @@ const SplashPage = (props) => {
   }
 
   return (
-    <main className='bg'>
+  <main>
+        <div className='bg'>
 
-      <AuthNavbar/>
-      <div className="inspiration-wrapper">
-        <h1 className='inspiration-text'> Find your inspiration. </h1>
-        <h1 className='splash-text'> Join the Flickr community, home to tens of <br></br> photos and 2 groups. </h1>
-        {button}
+            <AuthNavbar/>
+
+            <div className="inspiration-wrapper">
+              <h1 className='inspiration-text'> Find your inspiration. </h1>
+              <h1 className='splash-text'> Join the Flickr community, home to tens of <br></br> photos and 2 groups. </h1>
+              {button}
+            </div>
+
       </div>
     
-    </main>
+  </main>
   );
 };
 

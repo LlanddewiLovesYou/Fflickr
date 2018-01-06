@@ -2,6 +2,7 @@
   box-shadow: 1px 1px 1px #b3b6bc;
   border: 1px solid #d2d5db;
   width: 600px;
+
 }
 
 
@@ -49,4 +50,10 @@ margin: 20px;
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.album-text{
+  font-size: 25px;
+  font-weight: bold;
+  margin: 20px;
 }

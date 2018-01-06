@@ -8,7 +8,6 @@ export const UserInfoItem = (props) => {
         <div className="user-info-field">Field:</div>
         <div className="user-info-field">User Info</div>
       </span>
-      
     </main>
   );
 };

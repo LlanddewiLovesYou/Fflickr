@@ -11,6 +11,7 @@
 
 }
 
+
 .user-cover-image .username {
   font-family: sans-serif;
   color: white;
@@ -72,4 +73,10 @@
   justify-content: center;
   width: 100%;
   margin-bottom: 400px;
+}
+
+.user-show-avatar {
+  display:flex;
+  height:100px;
+  width: 100px;
 }

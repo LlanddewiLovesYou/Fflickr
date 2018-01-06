@@ -11,7 +11,7 @@ import AlbumShow from '../albums/album_show_container';
 class UserShowPage extends React.Component {
 
 componentDidMount() {
-  this.props.receiveUser(this.props.userShowId)
+  this.props.receiveUser(this.props.userShowId);
 }
 
 
@@ -24,9 +24,9 @@ render () {
 
           <span>
               <div className='user-cover-image'>
-                <h1 className='username'>Username</h1>
+              
+                <h1 className='username'>{this.props.user.username}</h1>
                 <h1 className='joined'>Joined 2018</h1>
-                <img className='user-show-avatar'/>
               </div>
           </span>
 
@@ -51,9 +51,9 @@ render () {
     } else {
       return (
         <h1> LOADING </h1>
-      )
+      );
     }
-  };
-};
+  }
+}
 
 export default UserShowPage;

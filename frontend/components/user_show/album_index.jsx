@@ -8,7 +8,7 @@ import AlbumComponent from '../albums/album_component';
 class AlbumIndex extends React.Component {
 
   componentDidMount() {
-    this.props.receiveUser(this.props.userId)
+    this.props.receiveUser(this.props.userId);
   }
 
   render () {
@@ -17,7 +17,7 @@ class AlbumIndex extends React.Component {
         <main className="album-index-wrapper">
           <ul>
           {this.props.albums.map((album) => {
-            return <AlbumComponent album={album} />
+            return <AlbumComponent album={album} />;
           })}
         </ul>
           <Link to='albums/new' className='new-album-button'>Create New Album</Link>
@@ -26,8 +26,8 @@ class AlbumIndex extends React.Component {
         </main>
       );
     } else {
-      return "LOADING"
-    };
+      return "LOADING";
+    }
 }
 
 

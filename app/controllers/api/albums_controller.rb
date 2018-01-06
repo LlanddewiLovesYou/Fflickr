@@ -4,7 +4,7 @@ class Api::AlbumsController < ApplicationController
     @album = Album.new(album_params)
     @album.user_id = current_user.id
     if @album.save
-      render :show
+      render 'api/albums/show'
     else
       render json: @album.errors.full_messages, status: 422
     end
@@ -13,7 +13,7 @@ class Api::AlbumsController < ApplicationController
   def show
     @album = Album.find(params[:id])
     if @album
-      render :show
+      render 'api/albums/show'
     else
       render json: @album.errors.full_messages, status: 422
     end

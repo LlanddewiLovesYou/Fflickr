@@ -3,12 +3,11 @@ import {connect} from 'react-redux';
 import AlbumForm from '../albums/album_form';
 import {createAlbum, updateAlbum} from '../../actions/album_actions';
 import { withRouter } from 'react-router-dom';
-import AlbumComponent from './album_component'
+import AlbumComponent from './album_component';
 
 const mapStateToProps = (state, ownProps) => {
   let user;
   let formType;
-  debugger
   if (ownProps.location.pathname === '/albums/new') {
     formType = 'edit';
   } else {
@@ -32,7 +31,7 @@ const mapDispatchToProps = (dispatch, ownProps) => {
   }
 
   return {
-    processForm: (album) => dispatch(processForm(album))
+    createAlbum: (album) => dispatch(createAlbum(album))
   };
 };
 

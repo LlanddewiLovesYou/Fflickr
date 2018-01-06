@@ -1,12 +1,16 @@
 import React from "react";
 import {connect} from 'react-redux';
 import AlbumIndex from '../user_show/album_index';
-import {receiveUser} from '../../actions/user_actions'
+import {receiveUser} from '../../actions/user_actions';
+
+
 const getAlbumsByUser = (state, user) => {
   if (user) {
-    return user.album_ids.map( id => state.albums[id])
+    return user.album_ids.map( id => state.albums[id]);
   }
-}
+};
+
+
 const mapStateToProps = (state, ownProps) => {
   return {
     user: state.users[ownProps.match.params.userId],

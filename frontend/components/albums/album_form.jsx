@@ -29,7 +29,7 @@ class AlbumForm extends React.Component {
 
     e.preventDefault();
     const user = this.state;
-    this.props.processForm({user});
+    this.props.createAlbum({album});
   }
 
 
@@ -55,12 +55,12 @@ class AlbumForm extends React.Component {
       formTitle = 'Edit Album';
     }
 
-  
+
 
     return (
    <main>
       <div className="album-form-container">
-        <form onSubmit={this.handleSubmit} className="album-form-box">
+        <form onSubmit={(album) => this.props.createAlbum({album})} className="album-form-box">
 
           <br/>
 

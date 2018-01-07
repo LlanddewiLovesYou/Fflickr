@@ -7,12 +7,13 @@ import {AuthRoute} from '../util/route_util';
 // import ShowContainer from './photos/show_container';
 import {Photos} from './photos/photos';
 import {AuthNavbar} from './auth/auth_navbar';
-import {NavBar} from './misc/navbar';
+import NavBar from './misc/navbar';
 import SplashPage from './splash_page/splash_page';
 import {LoginPage} from './login_page/login_page';
 import {NewUserPage} from './new_user_page/new_user_page';
 import UserShowContainer from './user_show/user_show_container';
 import Footer from './misc/footer';
+import AlbumShow from './albums/album_show_container';
 
 
 const App = () => (
@@ -23,9 +24,11 @@ const App = () => (
     <Route exact path='/' component={SplashPage} />
     <AuthRoute path="/login" component={LoginPage}  />
     <AuthRoute path="/signup" component={NewUserPage} />
+    <Route exact path='/users/:userId/albums/:albumId' component={AlbumShow}/>
     <Route path="/users/:userId" component={UserShowContainer} />
     <Route path="/photos" component={Photos} />
     <Route path="/users/:userId/photos" component={Photos} />
+
   </Switch>
 <Footer/>
 </main>

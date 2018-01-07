@@ -20,7 +20,7 @@ class AlbumIndex extends React.Component {
             return <AlbumComponent album={album} />;
           })}
         </ul>
-          <Link to='albums/new' className='new-album-button'>Create New Album</Link>
+          <Link to={`/users/${this.props.user.id}/newalbum`} className='new-album-button'>Create New Album</Link>
           <br></br>
           <Link to='/'>To Splash Page</Link>
         </main>

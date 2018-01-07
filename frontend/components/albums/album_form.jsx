@@ -5,19 +5,21 @@ class AlbumForm extends React.Component {
   constructor(props) {
     super(props);
     let form;
-    this.state = {
+    if (this.props.formType === 'edit'){
+      this.state = {
+        title: this.props.album.title,
+        description: this.props.album.description,
+        form: ''};
+    } else
+{    this.state = {
       title: '',
       description: '',
       // photos: [],
     form: ''};
+  }
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  componentWillReceiveProps(nextProps) {
-    if (nextProps.loggedIn) {
-      this.props.history.push('/');
-    }
-  }
 
   update(field) {
     return e => this.setState({
@@ -26,10 +28,11 @@ class AlbumForm extends React.Component {
   }
 
   handleSubmit(e) {
-
     e.preventDefault();
-    const user = this.state;
-    this.props.createAlbum({album});
+    const album = this.state;
+    this.props.processForm(album).then( () => {
+      this.props.history.push(`/users/${this.props.currentUser.id}/albums`);
+    })
   }
 
 
@@ -60,7 +63,7 @@ class AlbumForm extends React.Component {
     return (
    <main>
       <div className="album-form-container">
-        <form onSubmit={(album) => this.props.createAlbum({album})} className="album-form-box">
+        <form onSubmit={this.handleSubmit} className="album-form-box">
 
           <br/>
 

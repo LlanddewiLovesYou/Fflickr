@@ -1,7 +1,7 @@
 import React from "react";
 import {connect} from 'react-redux';
 import AlbumShow from '../user_show/album_show';
-import {requestAlbum} from '../../actions/album_actions'
+import {requestAlbum, deleteAlbum} from '../../actions/album_actions'
 
 const mapStateToProps = (state, ownProps) => {
   return {

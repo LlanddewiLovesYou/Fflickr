@@ -10,7 +10,7 @@ const mapStateToProps = (state, ownProps) => {
   let formType;
   if (ownProps.location.pathname.split('/').reverse()[0] === 'edit') {
     formType = 'edit';
-    debugger
+
     album = state.albums[ownProps.match.params.albumId]
   } else {
     formType = 'new';
@@ -27,8 +27,8 @@ const mapStateToProps = (state, ownProps) => {
 
 const mapDispatchToProps = (dispatch, ownProps) => {
   let processForm;
-
   if (ownProps.location.pathname.split('/').reverse()[0] === 'newalbum') {
+    
     processForm = createAlbum;
   } else {
     processForm = updateAlbum;

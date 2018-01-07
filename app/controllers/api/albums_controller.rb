@@ -3,7 +3,7 @@ class Api::AlbumsController < ApplicationController
   def create
     @album = Album.new(album_params)
     @album.user_id = current_user.id
-    debugger
+
     if @album.save
       render 'api/albums/show'
     else
@@ -21,7 +21,7 @@ class Api::AlbumsController < ApplicationController
   end
 
   def update
-    @album = current_user.albums.find(:params[:id])
+    @album = current_user.albums.find(params[:id])
     if @album.update(album_params)
       render :show
     else
@@ -29,10 +29,10 @@ class Api::AlbumsController < ApplicationController
     end
   end
 
-  def delete
-    @album = current_user.albums.find(:params[:id])
+  def destroy
+    @album = current_user.albums.find(params[:id])
     if @album.delete
-      render 'api/albums/album'
+      render 'api/albums/show'
     else
       render json: @album.errors.full_messages, status: 422
     end

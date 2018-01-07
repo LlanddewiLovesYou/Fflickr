@@ -1,6 +1,6 @@
 import React from 'react';
 import {Link, NavLink, Switch, Route} from 'react-router-dom';
-import {NavBar} from '../misc/navbar';
+import NavBar from '../misc/navbar';
 import {UserInfoWrapper} from './user_info_wrapper';
 import Photostream from './photostream';
 import AlbumIndex from '../albums/album_index_container';
@@ -24,7 +24,7 @@ render () {
 
           <span>
               <div className='user-cover-image'>
-              
+
                 <h1 className='username'>{this.props.user.username}</h1>
                 <h1 className='joined'>Joined 2018</h1>
               </div>
@@ -37,12 +37,14 @@ render () {
           </div>
 
           <div className='user-show-component'>
-            <Route exact path='/users/:userId' component={UserInfoWrapper} />
-            <Route exact path='/users/:userId/info' component={UserInfoWrapper}/>
-            <Route exact path='/users/:userId/photos' component={Photostream}/>
-            <Route exact path='/users/:userId/albums' component={AlbumIndex}/>
-            <Route exact path='/users/:userId/albums/new' component={AlbumForm}/>
-            <Route exact path='/users/:userId/albums/:albumId' component={AlbumShow}/>
+            <Switch>
+              <Route exact path='/users/:userId' component={UserInfoWrapper} />
+              <Route exact path='/users/:userId/info' component={UserInfoWrapper}/>
+              <Route exact path='/users/:userId/photos' component={Photostream}/>
+              <Route exact path='/users/:userId/albums' component={AlbumIndex}/>
+              <Route exact path='/users/:userId/newalbum' component={AlbumForm}/>
+              <Route exact path='/users/:userId/albums/:albumId/edit' component={AlbumForm}/>
+            </Switch>
           </div>
 
 

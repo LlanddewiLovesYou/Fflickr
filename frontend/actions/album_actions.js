@@ -22,6 +22,7 @@ export const requestAlbum = (id) => {
 
 export const createAlbum = (album) => {
   return (dispatch) => {
+    debugger
     return AlbumApi.createAlbum(album).then((payload) => {
       dispatch({type: RECEIVE_ALBUM, album: payload.album});
     });

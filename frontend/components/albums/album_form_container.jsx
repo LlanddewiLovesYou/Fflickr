@@ -6,16 +6,20 @@ import { withRouter } from 'react-router-dom';
 import AlbumComponent from './album_component';
 
 const mapStateToProps = (state, ownProps) => {
-  let user;
+  let album;
   let formType;
-  if (ownProps.location.pathname === '/albums/new') {
+  if (ownProps.location.pathname.split('/').reverse()[0] === 'edit') {
     formType = 'edit';
+    debugger
+    album = state.albums[ownProps.match.params.albumId]
   } else {
     formType = 'new';
   }
   return {
-    loggedIn: state.currentUser,
+    loggedIn: state.session.currentUser,
     errors: state.errors.session,
+    currentUser: state.session.currentUser,
+    album,
     formType,
   };
 };
@@ -24,14 +28,14 @@ const mapStateToProps = (state, ownProps) => {
 const mapDispatchToProps = (dispatch, ownProps) => {
   let processForm;
 
-  if (ownProps.location.pathname === '/albums/new') {
+  if (ownProps.location.pathname.split('/').reverse()[0] === 'newalbum') {
     processForm = createAlbum;
   } else {
     processForm = updateAlbum;
   }
 
   return {
-    createAlbum: (album) => dispatch(createAlbum(album))
+    processForm: (album) => dispatch(processForm(album))
   };
 };
 

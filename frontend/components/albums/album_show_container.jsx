@@ -7,6 +7,8 @@ const mapStateToProps = (state, ownProps) => {
   return {
     album: state.albums[ownProps.match.params.albumId],
     albumId: ownProps.match.params.albumId,
+    user: state.users[ownProps.match.params.userId],
+    userId: ownProps.match.params.userId
   };
 };
 

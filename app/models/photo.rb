@@ -1,5 +1,6 @@
 class Photo < ApplicationRecord
-has_attached_file :photo
+  has_attached_file :photo, styles: {thumbnail:'50x50>', medium: '300x300>', large: '500x500>'}, default_url: 'missing.jpg'
+  validates_attachment_content_type :photo, content_type: /\Aimage\/.*\z/
 end
 
 # class User < ActiveRecord::Base

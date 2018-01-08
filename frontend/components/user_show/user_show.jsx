@@ -7,6 +7,7 @@ import AlbumIndex from '../albums/album_index_container';
 import AlbumForm from '../albums/album_form_container';
 import Footer from '../misc/footer';
 import AlbumShow from '../albums/album_show_container';
+import PhotoIndex from './photo_index';
 
 class UserShowPage extends React.Component {
 
@@ -40,7 +41,7 @@ render () {
             <Switch>
               <Route exact path='/users/:userId' component={UserInfoWrapper} />
               <Route exact path='/users/:userId/info' component={UserInfoWrapper}/>
-              <Route exact path='/users/:userId/photos' component={Photostream}/>
+              <Route exact path='/users/:userId/photos' component={PhotoIndex}/>
               <Route exact path='/users/:userId/albums' component={AlbumIndex}/>
               <Route exact path='/users/:userId/newalbum' component={AlbumForm}/>
               <Route exact path='/users/:userId/albums/:albumId/edit' component={AlbumForm}/>

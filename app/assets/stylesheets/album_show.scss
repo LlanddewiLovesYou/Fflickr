@@ -18,7 +18,7 @@
 
 .album-show-mounting {
     // border: 1px solid green;
-    height: 550px;
+    height: 600px;
     background-color: #64646b;
 
 }
@@ -83,4 +83,27 @@
   font-size: 15px;
   margin-left: 10px;
   margin-bottom: 10px;
+}
+
+.photo-show-area {
+  height: 500px;
+  width: 700px;
+  background-color: black;
+  color: white;
+  font-size: 30px;
+  align-items: center
+}
+
+.back-to-albums {
+  color:white;
+  padding:15px;
+  padding-bottom: none;
+  align-items: center;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.back-to-albums img{
+  height: 15px;
+  width: 15px;
+  margin-right: 10px;
 }

@@ -13,11 +13,12 @@ class AlbumShowMounting extends React.Component {
   render () {
     return (
       <main className='album-show-mounting-component'>
-        <div className='chevron'>CHEVRON BACK</div>
-          <div>PHOTO AREA</div>
-        <div className='chevron'>CHEVRON FORWARD</div>
 
+        <img src={window.staticImages.leftChevron}></img>
 
+            <div className="photo-show-area">PHOTO AREA</div>
+
+        <img src={window.staticImages.rightChevron}></img>
 
       </main>
 

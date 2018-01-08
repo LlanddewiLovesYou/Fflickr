@@ -8,7 +8,7 @@ const AlbumComponent = (props) => {
   return (
     <main className="album-component-wrapper">
       <Link to={`albums/${props.album.id}`}>{props.album.title}</Link>
-      {props.album.description}
+      <div className='album-index-description'>{props.album.description}</div>
     </main>
   );
 };

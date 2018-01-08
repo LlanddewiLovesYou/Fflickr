@@ -15,14 +15,17 @@ class AlbumIndex extends React.Component {
     if (this.props.user) {
       return (
         <main className="album-index-wrapper">
-          <ul>
-          {this.props.albums.map((album) => {
-            return <AlbumComponent album={album} />;
-          })}
-        </ul>
           <Link to={`/users/${this.props.user.id}/newalbum`} className='new-album-button'>Create New Album</Link>
-          <br></br>
-          <Link to='/'>To Splash Page</Link>
+
+              <ul className='album-index'>
+                {this.props.albums.map((album) => {
+                  return <AlbumComponent album={album} />;
+                })}
+              </ul>
+              <br></br>
+
+    
+
         </main>
       );
     } else {

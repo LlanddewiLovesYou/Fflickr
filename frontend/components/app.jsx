@@ -30,7 +30,7 @@ const App = () => (
     <Route path="/users/:userId/photos" component={Photos} />
 
   </Switch>
-<Footer/>
+
 </main>
 );
 

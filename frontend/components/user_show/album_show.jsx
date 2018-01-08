@@ -4,7 +4,7 @@ import {connect} from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import AlbumComponent from '../albums/album_component';
 import NavBar from '../misc/navbar';
-import AlbumShowMounting from '../albums/album_show_mounting'
+import AlbumShowMounting from '../albums/album_show_mounting';
 
 
 class AlbumShow extends React.Component {
@@ -32,6 +32,9 @@ class AlbumShow extends React.Component {
         <main className="album-show-page">
           <NavBar/>
             <div className="album-show-mounting">
+              <div className='back-to-albums'>
+                <Link to={`/users/${this.props.userId}/albums`}><img src={window.staticImages.leftArrow}/>Back to {this.props.user.username}s Albums</Link>
+              </div>
               <AlbumShowMounting/>
             </div>
             <div className="album-show-wrapper">
@@ -40,7 +43,7 @@ class AlbumShow extends React.Component {
               <h1 className="album-show-description">{this.props.user.username}</h1>
                 <div className="album-show-buttons">
                   <Link to={`/users/${this.props.userId}/albums/${this.props.album.id}/edit`}>Edit Album</Link>
-                  <button className='album-delete-button' onClick={this.handleClick}>Delete this album?</button>
+                  <button className='album-delete-button' onClick={this.handleClick}>Delete This Album?</button>
                 </div>
             </div>
 

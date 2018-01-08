@@ -31,7 +31,7 @@ gem 'jbuilder', '~> 2.5'
 # gem 'capistrano-rails', group: :development
 gem 'bcrypt'
 gem 'jquery-rails'
-gem 'paperclip'
+gem 'paperclip' , '5.0.0.beta1'
 gem 'figaro'
 gem 'aws-sdk', '< 3.0'
 

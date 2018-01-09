@@ -1,7 +1,7 @@
 import React from 'react';
 import {Link, NavLink, Switch, Route} from 'react-router-dom';
 import NavBar from '../misc/navbar';
-import {UserInfoWrapper} from './user_info_wrapper';
+import UserInfoWrapper from './user_info_wrapper';
 import Photostream from './photostream';
 import AlbumIndex from '../albums/album_index_container';
 import AlbumForm from '../albums/album_form_container';

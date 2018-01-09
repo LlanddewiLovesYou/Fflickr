@@ -27,23 +27,4 @@ class UserInfoWrapper extends React.Component {
   }
 
 
-}
-
-
-const mapStateToProps = (state, ownProps) => {
-  return {
-    userShowId: ownProps.match.params.userId,
-    user: state.users[ownProps.match.params.userId]
-  };
-};
-
-const mapDispatchToProps = (dispatch) => {
-  return {
-    receiveUser: (id) => dispatch(receiveUser(id))
-  };
-};
-
-
-
-
-export default withRouter(connect(mapStateToProps, mapDispatchToProps)(UserInfoWrapper));
+} export default UserInfoWrapper;

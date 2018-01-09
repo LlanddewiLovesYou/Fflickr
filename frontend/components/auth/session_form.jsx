@@ -67,7 +67,7 @@ class SessionForm extends React.Component {
     } else if (this.props.formType === 'signup') {
       formTitle = 'Sign Up';
     }
-debugger
+
     return (
    <main>
       <div className="login-form-container">

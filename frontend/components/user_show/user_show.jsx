@@ -9,6 +9,7 @@ import Footer from '../misc/footer';
 import AlbumShow from '../albums/album_show_container';
 import PhotoIndex from './photo_index';
 import UserInfoForm from './user_info_form';
+import PhotoStream from './Photostream';
 
 class UserShowPage extends React.Component {
 
@@ -41,8 +42,8 @@ render () {
           <div className='user-show-component'>
             <Switch>
               <Route exact path='/users/:userId' component={UserInfoWrapper} />
+              <Route exact path='/users/:userId/photos' component={PhotoStream}/>
               <Route exact path='/users/:userId/info' component={UserInfoWrapper}/>
-              <Route exact path='/users/:userId/photos' component={PhotoIndex}/>
               <Route exact path='/users/:userId/albums' component={AlbumIndex}/>
               <Route exact path="/users/:userId/update-user-info" component={UserInfoForm} />
               <Route exact path='/users/:userId/newalbum' component={AlbumForm}/>
@@ -60,5 +61,9 @@ render () {
     }
   }
 }
+
+
+
+
 
 export default UserShowPage;

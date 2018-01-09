@@ -14,6 +14,8 @@ import {NewUserPage} from './new_user_page/new_user_page';
 import UserShowContainer from './user_show/user_show_container';
 import Footer from './misc/footer';
 import AlbumShow from './albums/album_show_container';
+import PhotoIndex from './user_show/photo_index';
+import PhotoUploadForm from './photos/photo_upload_form';
 
 
 const App = () => (
@@ -25,12 +27,10 @@ const App = () => (
     <AuthRoute path="/login" component={LoginPage}  />
     <AuthRoute path="/signup" component={NewUserPage} />
     <Route exact path='/users/:userId/albums/:albumId' component={AlbumShow}/>
-  
+    <Route exact path='/users/:userId/photos' component={PhotoIndex}/>
+    <Route exact path='/users/:userId/photos/new' component={PhotoUploadForm}/>
     <Route path="/users/:userId" component={UserShowContainer} />
-    <Route path="/photos" />
     <Route path="/users/:userId/photos/:photoId" component={PhotoShowPage} />
-
-
   </Switch>
 
 </main>

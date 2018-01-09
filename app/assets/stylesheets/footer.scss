@@ -21,10 +21,10 @@
  padding-top: 20px;
  margin: 0 auto;
  padding-right: 60px;
+ color: white;
 }
 
 .foot-link {
-  color: white;
   font-family: 'Montserrat', sans-serif;
   text-decoration: none;
   margin: 20px;
@@ -34,15 +34,16 @@
 .footer-links-bottom {
   padding-bottom: 20px;
   margin-left: 350px;
+  color: #85858C;
 }
 
 .footer-links-bottom a {
-  color: white;
   font-family: 'Montserrat', sans-serif;
 }
 
 .footer .ledger {
-  border: 1px solid white;
+  border-top: 1px solid white;
+  height: 1px;
   width: 1200px;
   margin: 0 auto;
 }

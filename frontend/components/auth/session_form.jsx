@@ -10,6 +10,7 @@ class SessionForm extends React.Component {
       password: '',
     form: ''};
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.setState = this.setState.bind(this);
     this.guestLogin = this.guestLogin.bind(this);
   }
 
@@ -36,6 +37,7 @@ class SessionForm extends React.Component {
     this.props.logIn({username: "FutureEmployer", password: 'password'});
   }
 
+
   renderErrors() {
 
     return(
@@ -56,6 +58,7 @@ class SessionForm extends React.Component {
     } else if (this.props.formType === 'signup') {
       formTitle = 'Sign Up';
     }
+
     return (
    <main>
       <div className="login-form-container">

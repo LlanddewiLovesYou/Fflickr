@@ -19,7 +19,7 @@ margin: 20px;
 }
 
 .album-input {
- height: 20px;
+ height: 35px;
  width: 250px;
  border: none;
  margin-bottom: 20px;
@@ -27,6 +27,7 @@ margin: 20px;
  border-bottom: 2px solid #b3b6bc;
  color: #b3b6bc;
  font-size: 15px;
+
 }
 
 .album-input:focus {
@@ -36,6 +37,7 @@ margin: 20px;
   border-bottom: 2px solid #4286f4;
   color: black;
   font-size: 15px;
+  outline-width: 0;
 }
 
 .photo-upload-field {

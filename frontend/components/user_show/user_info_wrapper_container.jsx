@@ -1,10 +1,11 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
-import {UserInfoWrapper} from './user_info_wrapper';
+import UserInfoWrapper from './user_info_wrapper';
 import {connect} from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import UserShowPage from './user_show';
 import { receiveUser } from "../../actions/user_actions";
+
 
 const mapStateToProps = (state, ownProps) => {
   return {

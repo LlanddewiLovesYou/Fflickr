@@ -11,7 +11,7 @@ User.destroy_all
 Album.destroy_all
 
 user1 = User.create({username: 'Ian', password: 'password'})
-user2 = User.create({username: 'guest', password: 'password'})
+user2 = User.create({username: 'FutureEmployer', password: 'password'})
 
 album1 = Album.create({title: 'album1', description: 'This is the first album', user_id: user1.id})
 album2 = Album.create({title: 'album2', description: 'This is the second album', user_id: user1.id})

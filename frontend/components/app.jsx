@@ -25,6 +25,7 @@ const App = () => (
     <AuthRoute path="/login" component={LoginPage}  />
     <AuthRoute path="/signup" component={NewUserPage} />
     <Route exact path='/users/:userId/albums/:albumId' component={AlbumShow}/>
+  
     <Route path="/users/:userId" component={UserShowContainer} />
     <Route path="/photos" />
     <Route path="/users/:userId/photos/:photoId" component={PhotoShowPage} />

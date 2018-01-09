@@ -29,9 +29,9 @@ const SplashPage = (props) => {
               <h1 className='splash-text'> Join the Flickr community, home to tens of <br></br> photos and 2 groups. </h1>
               {button}
             </div>
-
+          <Footer/>
       </div>
-    
+
   </main>
   );
 };

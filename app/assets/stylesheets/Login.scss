@@ -74,6 +74,7 @@
 .login-subtext {
   font-size: 1.23529em;
 
+
 }
 
 .login-button {
@@ -85,4 +86,29 @@
   color: white;
   border-radius: 3px;
   margin: 40px;
+  margin-bottom: 20px;
+}
+
+
+.guest-signin {
+  width: 135px;
+  justify-content: center;
+  padding: 5px;
+  background-color: red;
+  border-radius: 4px;
+  color: white;
+  border: 1px solid red;
+  margin-bottom: 20px;
+}
+
+.guest-signin:hover {
+  width: 135px;
+  justify-content: center;
+  padding: 5px;
+  background-color: white;
+  border-radius: 4px;
+  color: red;
+  border: 1px solid red;
+  margin-bottom: 20px;
+  cursor: pointer;
 }

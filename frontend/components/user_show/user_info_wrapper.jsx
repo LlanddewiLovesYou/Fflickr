@@ -6,20 +6,29 @@ import { withRouter } from 'react-router-dom';
 import UserShowPage from './user_show';
 import { receiveUser } from "../../actions/user_actions";
 
+class UserInfoWrapper extends React.Component {
 
-export const UserInfoWrapper = (props) => {
-  return (
-    <main>
+  constructor(props) {
+    super(props);
+  }
+
+
+  render(){
+    return (
+      <main>
         <span>
           <div className='user-info-wrapper'>
             <UserInfoItem/>
             <h1>More user info coming soon!</h1>
           </div>
-
         </span>
-    </main>
-  );
-};
+      </main>
+    );
+  }
+
+
+}
+
 
 const mapStateToProps = (state, ownProps) => {
   return {

@@ -18,7 +18,7 @@ const mapStateToProps = (state, ownProps) => {
   let user;
   let formType;
   if (ownProps.location.pathname === '/signup') {
-  
+
     formType = 'signup';
   } else {
     formType = 'login';
@@ -41,7 +41,8 @@ const mapDispatchToProps = (dispatch, ownProps) => {
   }
 
   return {
-    processForm: (user) => dispatch(processForm(user))
+    processForm: (user) => dispatch(processForm(user)),
+    logIn: (user) => dispatch(logIn(user))
   };
 };
 

@@ -19,14 +19,14 @@ class PhotoUploadForm extends React.Component {
   componentWillReceiveProps(nextProps) {
     // if (nextProps.loggedIn) {
     //   this.props.history.push('/');
-    }
+
   }
 
 
   update(field) {
-    return e => this.setState({
+    return (e) => this.setState({
       [field]: e.currentTarget.value
-    });
+    })
   }
 
   updateFile (e) {
@@ -72,18 +72,14 @@ class PhotoUploadForm extends React.Component {
           <input type='file' onChange={this.updateFile}></input>
 
           <label>Title:
-            <input value={this.state.joined} onChange={this.update('title')} placeholder='Title' type='text'/>
+            <input value={this.state.title} onChange={this.update('title')} placeholder='Title' type='text'/>
           </label>
 
           <label>Caption:
-            <input value={this.state.occupation} onChange={this.update('caption')} placeholder='Caption' type='text'/>
+            <input value={this.state.caption} onChange={this.update('caption')} placeholder='Caption' type='text'/>
           </label>
 
-          <label>Image URL:
-            <input value={this.state.hometown} onChange={this.update('imageUrl')} placeholder='imageUrl' type='text'/>
-          </label>
-
-          <button value=>Upload Photo!</button>
+          <button>UPLOAD</button>
 
         </form>
       </main>

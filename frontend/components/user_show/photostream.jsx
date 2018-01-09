@@ -4,7 +4,7 @@ import {Link} from 'react-router-dom';
 
 
 
-const Photostream = (props) => {
+const PhotoStream = (props) => {
   return (
     <main>
       This is the Photostream
@@ -13,4 +13,4 @@ const Photostream = (props) => {
   );
 };
 
-export default Photostream;
+export default PhotoStream;

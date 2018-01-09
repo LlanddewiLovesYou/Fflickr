@@ -1,5 +1,7 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router-dom';
+import {connect} from 'react-redux';
+import { updateUser } from '../../actions/user_actions';
 
 class UserInfoForm extends React.Component {
 
@@ -13,7 +15,6 @@ class UserInfoForm extends React.Component {
       current_city: '',
       email: '',
       website: ''
-
     };
     this.handleSubmit = this.handleSubmit.bind(this);
   }
@@ -91,4 +92,11 @@ class UserInfoForm extends React.Component {
   }
 }
 
-export default UserInfoForm;
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    updateUser: (user) => dispatch(updateUser(user))
+  };
+};
+
+export default connect(null, mapDispatchToProps)(UserInfoForm);

@@ -1,10 +1,16 @@
 import merge from 'lodash/merge';
 import {RECEIVE_USER} from '../actions/user_actions';
 import {RECEIVE_ALBUM} from '../actions/album_actions';
+import {RECEIVE_PHOTO} from '../actions/photo_actions';
+
 
 const usersReducer = (state = {}, action) => {
   let newState;
   switch (action.type) {
+    case RECEIVE_PHOTO:
+      newState = merge({}, state);
+      newState[currentUser.id].photoIds.push(action.photo.id);
+      return newState;
     case RECEIVE_USER:
       newState = merge({}, state);
       newState[action.user.id] = action.user;

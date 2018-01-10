@@ -6,16 +6,17 @@ import PhotoIndex from '../user_show/photo_index';
 
 const getPhotosByUser = (state, user) => {
   if (user) {
-    return user.photo_ids.map( (id) => disatch(requestPhoto(state.photos[id])));
+    return user.photoIds.map( (id) => state.photos[id] );
+  } else {
+    return [];
   }
 };
 
 const mapStateToProps = (state, ownProps) => {
+  const user = state.users[ownProps.match.params.userId];
   return {
-    photos: getPhotosByUser(state, state.users[ownProps.match.params.userId]),
-    user: state.users[ownProps.match.params.userId],
-    photoId: ownProps.match.params.photoId,
-    userId: ownProps.match.params.userId
+    photos: getPhotosByUser(state, user),
+    user
   };
 };
 

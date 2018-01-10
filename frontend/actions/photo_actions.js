@@ -15,8 +15,8 @@ export const requestPhoto = (id) => {
 
 export const createPhoto = (photo) => {
   return (dispatch) => {
-
     return PhotoApi.createPhoto(photo).then((payload) => {
+      
       dispatch({type: RECEIVE_PHOTO, photo: payload.photo});
     });
   };

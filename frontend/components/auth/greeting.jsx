@@ -12,7 +12,6 @@ const sessionLinks = () => (
 const personalGreeting = (currentUser, logout, history) => {
   const fancyLogout = () => {
     logout();
-    
     history.push("/")
   }
 

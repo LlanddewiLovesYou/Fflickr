@@ -1,0 +1,80 @@
+// .experiment {
+//   height: 100%;
+//   background-size: cover;
+//   background-color: #B3B7C9;
+// }
+
+.upload-form-space {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  // background-color: #B3B7C9;
+  height: 100%;
+  background-size: cover;
+  background-color: #B3B7C9;
+}
+
+.photo-upload-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 1px 1px 1px #b3b6bc;
+  border: 1px solid #d2d5db;
+  width: 400px;
+  margin:50px;
+}
+
+.photo-upload-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: white;
+}
+
+.photo-upload-form label {
+  padding: 20px;
+}
+
+.photo-upload-form input {
+  margin: 10px;
+  height: 20px;
+  width: 250px;
+  border: none;
+  margin-bottom: 20px;
+  margin-left: 20px;
+  border-bottom: 2px solid #b3b6bc;
+  color: #b3b6bc;
+  font-size: 15px;
+  outline-width: 0;
+}
+
+.photo-upload-form input:focus {
+  width: 250px;
+  border: none;
+  border-bottom: 2px solid #4286f4;
+  color: black;
+  font-size: 15px;
+}
+
+.photo-upload-form h1 {
+  margin: 20px;
+  font-weight: bold;
+}
+
+.photo-upload-button {
+  text-decoration: none;
+  color: white;
+  background-color: #4286f4;
+  font-weight: normal;
+  // justify-content: flex-end;
+  padding: 7px;
+  border: none;
+  border-radius: 4px;
+  margin-left: 20px;
+  margin: 20px;
+  width: 150px;
+  height: 20px;
+  text-align: center;
+
+}

@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router-dom';
+import NavBar from '../misc/navbar';
 
 class PhotoUploadForm extends React.Component {
 
@@ -13,8 +14,12 @@ class PhotoUploadForm extends React.Component {
       title: null
     };
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.updateFile = this.updateFile.bind(this);
   }
 
+  componentDidMount() {
+    this.props.receiveUser(this.props.userId)
+  }
 
   componentWillReceiveProps(nextProps) {
     // if (nextProps.loggedIn) {
@@ -32,8 +37,9 @@ class PhotoUploadForm extends React.Component {
   updateFile (e) {
     const file = e.currentTarget.files[0];
     const fileReader = new FileReader();
+    const context = this;
     fileReader.onloadend = () => {
-      this.setState({ imageFile: file, imageUrl:fileReader.result})
+      context.setState({ imageFile: file, imageUrl:fileReader.result})
     }
     if (file) {
       fileReader.readAsDataURL(file);
@@ -44,10 +50,12 @@ class PhotoUploadForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     const formData = new FormData();
-    formData.append('photo[image]', this.state.imageFile)
-    formData.append('photo[caption]', this.state.caption)
+    formData.append('photo[photo]', this.state.imageFile);
+    formData.append('photo[caption]', this.state.caption);
+    formData.append('photo[title]', this.state.title);
+    formData.append('photo[user_id]', this.props.currentUser.id);
     const photo = this.state;
-    this.props.processForm(formData: {[photo.id]: photo});
+    this.props.createPhoto(formData);
   }
 
 
@@ -67,10 +75,12 @@ class PhotoUploadForm extends React.Component {
   render() {
     return (
      <main>
-        <form className='photo-info-form' onSubmit={this.handleSubmit}>
-
-          <input type='file' onChange={this.updateFile}></input>
-
+       <NavBar/>
+       <div className='upload-form-space'>
+       <div className='photo-upload-wrapper'>
+        <form onSubmit={this.handleSubmit}>
+          <div className='photo-upload-form'>
+          <h1 className='photo-upload-title'>Upload Photo</h1>
           <label>Title:
             <input value={this.state.title} onChange={this.update('title')} placeholder='Title' type='text'/>
           </label>
@@ -79,9 +89,15 @@ class PhotoUploadForm extends React.Component {
             <input value={this.state.caption} onChange={this.update('caption')} placeholder='Caption' type='text'/>
           </label>
 
-          <button>UPLOAD</button>
+          <label>Photo:
+            <input type='file' onChange={this.updateFile}></input>
+          </label>
+        </div>
+          <input type='submit' value="UPLOAD" className='photo-upload-button'/>
 
         </form>
+      </div>
+      </div>
       </main>
     );
   }

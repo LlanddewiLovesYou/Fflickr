@@ -1,15 +1,19 @@
 json.user do
-  json.partial! "api/photos/photo", user: @user
+  json.partial! "api/users/user", user: @user
 end
 
+# {user:{user: @user}}
+
 json.albums do
-  @album.photo.each do |photo|
+  @user.albums.each do |album|
     json.set! album.id do
-      json.partial! "api/photos/photo", photo
+      json.partial! "api/albums/album", album: album
     end
   end
 end
 
-# json.photos do
-#
-# end
+# {user:{user: @user}, albums:{albums: @albums}}
+
+json.photo do
+  json.partial! 'api/photos/photo', photo: @photo, user: @user
+end

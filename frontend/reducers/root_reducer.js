@@ -6,12 +6,15 @@ import session from './session_reducer';
 import errors from './errors_reducer';
 import users from './user_reducer';
 import albums from './albums_reducer';
+import photos from './photo_reducer';
+
 
 const rootReducer = combineReducers({
   session,
   errors,
   users,
-  albums
+  albums,
+  photos
 });
 
 export default rootReducer;

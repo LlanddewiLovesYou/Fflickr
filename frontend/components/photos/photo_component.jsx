@@ -11,13 +11,14 @@ class PhotoComponent extends React.Component {
 
 
   render () {
+
     return (
       <main>
         <div>
-          <div>Photo.photo</div>
-          <div>{this.props.user.username}</div>
-          <div>{this.props.title}</div>
-          <div>{this.props.caption}</div>
+          <img className="index-photo" src={this.props.photo.photo_url}></img>
+
+          <div>{this.props.photo.title}</div>
+          <div>{this.props.photo.caption}</div>
           <br></br>
         </div>
       </main>

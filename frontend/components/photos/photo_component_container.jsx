@@ -4,9 +4,9 @@ import PhotoComponent from './photo_component';
 
 
 const mapStateToProps = (state, ownProps) => {
-  const user = state.users[ownProps.match.params.userId];
+  
+  const user = state.users[ownProps.photo.userId];
   return {
-    photos: getPhotosByUser(state, user),
     user
   };
 };

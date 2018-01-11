@@ -3,6 +3,9 @@ class Api::PhotosController < ApplicationController
   def create
     @photo = Photo.new(photo_params)
     @photo.user_id = current_user.id
+    if photo_params[:album_id]
+      @photo.album = Album.find(photo_params[:album_id])
+    end
     @user = current_user
 
     if @photo.save
@@ -43,7 +46,7 @@ class Api::PhotosController < ApplicationController
   private
 
   def photo_params
-    params.require(:photo).permit(:user_id, :photo, :caption)
+    params.require(:photo).permit(:user_id, :photo, :caption, :album_id)
 
   end
 

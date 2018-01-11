@@ -1,6 +1,7 @@
 json.album do
   json.set! @album.id do
     json.partial! "api/albums/album", album: @album
+    json.photoIds @album.photos.pluck(:id)
   end
 end
 
@@ -10,11 +11,11 @@ json.user do
   end
 end
 
-# json.photos do
-#   @album.photo.each do |photo|
-#     json.set! album.id do
-#       json.partial! "api/photos/photo", photo.id: photo
-#     end
-#   end
-# end
+json.photos do
+  @album.photos.each do |photo|
+    json.set! album.id do
+      json.partial! "api/photos/photo", photo: photo
+    end
+  end
+end
 #under a key of albumid and then nested again under key of 'album'

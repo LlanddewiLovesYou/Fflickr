@@ -13,5 +13,8 @@
 
 class Album < ApplicationRecord
   belongs_to :user
-  has_many :photos
+  has_many :alb_photos
+  has_many :photos,
+    through: :alb_photos,
+    source: :photo
 end

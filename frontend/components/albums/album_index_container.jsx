@@ -5,8 +5,10 @@ import {receiveUser} from '../../actions/user_actions';
 
 
 const getAlbumsByUser = (state, user) => {
-  if (user) {
-    return user.album_ids.map( id => state.albums[id]);
+  if (user.albumIds) {
+    return user.albumIds.map( id => state.albums[id]);
+  } else {
+    return []
   }
 };
 

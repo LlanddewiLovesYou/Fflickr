@@ -35,7 +35,7 @@ class AlbumShow extends React.Component {
               <div className='back-to-albums'>
                 <Link to={`/users/${this.props.userId}/albums`}><img src={window.staticImages.leftArrow}/>Back to {this.props.user.username}s Albums</Link>
               </div>
-              <AlbumShowMounting/>
+              <AlbumShowMounting photos={this.props.photos}/>
             </div>
             <div className="album-show-wrapper">
               <h1 className="album-show-title">{this.props.album.title}</h1>

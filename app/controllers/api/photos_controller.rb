@@ -2,7 +2,7 @@ class Api::PhotosController < ApplicationController
 
   def create
     @photo = Photo.new(photo_params)
-  
+
     @photo.user_id = current_user.id
     if photo_params[:album_id]
       @photo.album = Album.find(photo_params[:album_id])
@@ -18,6 +18,7 @@ class Api::PhotosController < ApplicationController
 
   def show
     @photo = Photo.find(params[:id])
+    @user = User.find(@photo.user_id)
     if @photo
       render 'api/photos/show'
     else

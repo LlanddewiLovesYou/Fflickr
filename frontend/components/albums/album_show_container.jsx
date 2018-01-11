@@ -1,24 +1,27 @@
 import React from "react";
 import {connect} from 'react-redux';
 import AlbumShow from '../user_show/album_show';
-import {requestAlbum, deleteAlbum} from '../../actions/album_actions'
+import {requestAlbum, deleteAlbum} from '../../actions/album_actions';
 
 const photosByAlbum = (album, state) => {
   if (album && album.photoIds) {
-    return album.photoIds.map( (id) => state.photos[id])
+    return album.photoIds.map( (id) => state.photos[id]);
   } else {
     return [];
   }
-}
+};
 
 const mapStateToProps = (state, ownProps) => {
-  const album = state.albums[ownProps.match.params.albumId]
+  const album = state.albums[ownProps.match.params.albumId];
+  const photos = photosByAlbum(album, state);
+  debugger
   return {
     album,
     albumId: ownProps.match.params.albumId,
     user: state.users[ownProps.match.params.userId],
     userId: ownProps.match.params.userId,
-    photos: photosByAlbum(album, state)
+    photos,
+    photo: photos[0]
 
   };
 };

@@ -16,6 +16,7 @@ class PhotoComponent extends React.Component {
     if(this.props.user === undefined){
       this.props.receiveUser(this.props.photo.user_id);
     }
+  
   }
 
   handleClick (e) {
@@ -29,12 +30,12 @@ class PhotoComponent extends React.Component {
     if (this.props.user){
       username = this.props.user.username;
     }
-
+      debugger
     return (
       <main  className="component-photo-wrapper">
-        <Link to={`/users/${this.props.user.id}/photos/${this.props.photo.id}/show`}>
+        <Link to={`/users/${this.props.userId}/photos/${this.props.photo.id}/show`}>
         <div  className="component-photo">
-          <img src={this.props.photo.photo_url}></img>
+          <img src={this.props.photo.photo_url} className="photo-show-area"/>
 
               <div  className="photo-component-info">
                 <span className="component-photo-user">{username}</span>

@@ -11,6 +11,7 @@ const albumsReducer = (state = {}, action) => {
       newState = merge({}, state, action.albums);
       return newState;
     case RECEIVE_ALBUM:
+    debugger
       newState = merge({}, state, action.album);
       return newState;
     case REMOVE_ALBUM:

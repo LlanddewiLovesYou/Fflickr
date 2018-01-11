@@ -8,8 +8,7 @@ const usersReducer = (state = {}, action) => {
   let newState;
   switch (action.type) {
     case RECEIVE_PHOTO:
-      newState = merge({}, state);
-      newState[currentUser.id].photoIds.push(action.photo.id);
+      newState = merge({}, state, action.user);
       return newState;
     case RECEIVE_USER:
       newState = merge({}, state);

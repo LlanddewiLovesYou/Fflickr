@@ -4,7 +4,7 @@ import {connect} from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import AlbumComponent from '../albums/album_component';
 import NavBar from '../misc/navbar';
-import AlbumShowMounting from '../albums/album_show_mounting';
+import PhotoShowMounting from '../photos/photo_show_mounting';
 
 
 class AlbumShow extends React.Component {
@@ -35,7 +35,7 @@ class AlbumShow extends React.Component {
               <div className='back-to-albums'>
                 <Link to={`/users/${this.props.userId}/albums`}><img src={window.staticImages.leftArrow}/>Back to {this.props.user.username}s Albums</Link>
               </div>
-              <AlbumShowMounting photos={this.props.photos}/>
+              <PhotoShowMounting photo={this.props.photo}/>
             </div>
             <div className="album-show-wrapper">
               <h1 className="album-show-title">{this.props.album.title}</h1>

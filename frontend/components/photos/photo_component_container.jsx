@@ -3,14 +3,16 @@ import {connect} from 'react-redux';
 import PhotoComponent from './photo_component';
 import {receiveUser} from '../../actions/user_actions';
 import {withRouter} from 'react-router-dom';
+import {requestPhoto} from '../../actions/photo_actions';
 
 
 const mapStateToProps = (state, ownProps) => {
 
 
-  const user = state.users[ownProps.photo.user_id];
+  const user = state.users[ownProps.match.params.userId];
   return {
-    user
+    user,
+    userId: ownProps.match.params.userId
   };
 };
 

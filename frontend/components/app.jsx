@@ -5,7 +5,7 @@ import {Route, Redirect, Switch, Link, HashRouter} from 'react-router-dom';
 import SessionFormContainer from './auth/session_form_container';
 import {AuthRoute} from '../util/route_util';
 // import ShowContainer from './photos/show_container';
-import PhotoShowPage from './photos/photo_show_page';
+import PhotoShowContainer from './photos/photo_show_container';
 import {AuthNavbar} from './auth/auth_navbar';
 import NavBar from './misc/navbar';
 import SplashPage from './splash_page/splash_page';
@@ -28,7 +28,7 @@ const App = () => (
     <AuthRoute path="/signup" component={NewUserPage} />
     <Route exact path='/users/:userId/albums/:albumId' component={AlbumShow}/>
     <Route exact path='/users/:userId/photos/new' component={PhotoUploadForm}/>
-    <Route exact path="/users/:userId/photos/:photoId/show" component={PhotoShowPage} />
+    <Route exact path="/users/:userId/photos/:photoId/show" component={PhotoShowContainer} />
     <Route path="/users/:userId" component={UserShowContainer} />
   </Switch>
 

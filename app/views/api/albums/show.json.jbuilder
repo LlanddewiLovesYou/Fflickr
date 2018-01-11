@@ -13,7 +13,7 @@ end
 
 json.photos do
   @album.photos.each do |photo|
-    json.set! album.id do
+    json.set! photo.id do
       json.partial! "api/photos/photo", photo: photo
     end
   end

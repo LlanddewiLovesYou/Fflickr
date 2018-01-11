@@ -2,6 +2,7 @@ import React from 'react';
 import {Link} from 'react-router-dom';
 import {connect} from 'react-redux';
 import { withRouter } from 'react-router-dom';
+import PhotoComponentContainer from './photo_component_container';
 
 class PhotoShowMounting extends React.Component {
 
@@ -10,11 +11,19 @@ class PhotoShowMounting extends React.Component {
     this.state = {displayed_photo: null};
   }
 
+
+
   render () {
+    debugger
     return (
-      <main className='album-show-mounting-component'>
-            <div className="photo-show-area">PHOTO AREA</div>
+      <main className='photo-show-mounting-component'>
+
+        <img src={window.staticImages.leftChevron}/>
+
+          <img src={this.props.photo.photo_url} className="photo-show-area"/>
+
         <img src={window.staticImages.rightChevron}/>
+
       </main>
 
 
@@ -25,24 +34,4 @@ class PhotoShowMounting extends React.Component {
 
 }
 
-const mapStateToProps = (state, ownProps) => {
-  return {
-    photo: state.photos[ownProps.match.params.photoId],
-    user: state.users[ownProps.match.params.userId],
-    photoId: ownProps.match.params.photoId,
-    userId: ownProps.match.params.userId
-  };
-};
-
-const mapDispatchToProps = (dispatch) => {
-  return {
-    requestPhoto: (id) => dispatch(requestPhoto(id)),
-    deletePhoto: (id) => dispatch(deletePhoto(id)),
-    updatePhoto: (id) => dispatch(updatePhoto(id))
-  };
-};
-
-
-
-
-export default withRouter(connect(mapStateToProps, mapDispatchToProps)(PhotoShowMounting));
+export default PhotoShowMounting;

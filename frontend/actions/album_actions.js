@@ -15,7 +15,7 @@ import * as AlbumApi from '../util/albums_api_util';
 export const requestAlbum = (id) => {
   return (dispatch) => {
     return AlbumApi.fetchAlbum(id).then((payload) => {
-      dispatch({type: RECEIVE_ALBUM, album: payload.album, user: payload.user});
+      dispatch({type: RECEIVE_ALBUM, album: payload.album, user: payload.user, photos: payload.photos});
     });
   };
 };

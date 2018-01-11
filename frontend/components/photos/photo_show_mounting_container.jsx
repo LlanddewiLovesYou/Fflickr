@@ -1,8 +1,10 @@
-import React from "react";
+import React from 'react';
+import {Link} from 'react-router-dom';
 import {connect} from 'react-redux';
-import PhotoShowPage from './photo_show_page';
-import {requestPhoto} from '../../actions/photo_actions';
-import {withRouter} from 'react-router-dom';
+import { withRouter } from 'react-router-dom';
+import PhotoShowMounting from './photo_show_mounting';
+
+
 
 const mapStateToProps = (state, ownProps) => {
   return {
@@ -24,4 +26,4 @@ const mapDispatchToProps = (dispatch) => {
 
 
 
-export default withRouter(connect(mapStateToProps, mapDispatchToProps)(PhotoShowPage));
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(PhotoShowMounting));

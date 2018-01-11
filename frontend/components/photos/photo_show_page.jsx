@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router-dom';
-import PhotoShowMounting from './photo_show_mounting';
+import PhotoShowMountingContainer from './photo_show_mounting_container';
 import NavBar from '../misc/navbar';
 import PhotoShowInfo from './photo_show_info';
 
@@ -16,11 +16,12 @@ import PhotoShowInfo from './photo_show_info';
    }
 
   render () {
+    debugger
     if (this.props.photo) {
     return (
       <div>
         <NavBar/>
-        <PhotoShowMounting/>
+        <PhotoShowMountingContainer photo={this.props.photo}/>
         <PhotoShowInfo photo={this.props.photo}/>
       </div>
     );

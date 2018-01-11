@@ -47,6 +47,7 @@
   text-align: right;
   font-weight: bold;
   margin-right: 85px;
+  margin-left: 300px;
   // justify-content: flex-end;
   font-style: normal;
 }
@@ -84,4 +85,8 @@
   display: flex;
   justify-content: space-between;
   opacity: 1;
+}
+
+.header-name {
+  width: 300px;
 }

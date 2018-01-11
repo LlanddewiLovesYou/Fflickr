@@ -13,7 +13,7 @@ const NavBar = ( { currentUser } ) => {
             <Link to="">Explore</Link>
             <Link to="">Create</Link>
           </div>
-        <div className="searchbar"><img src={window.staticImages.searchImage}/>(Coming Soon!)</div>
+        
         <GreetingContainer/>
     </div>
   );

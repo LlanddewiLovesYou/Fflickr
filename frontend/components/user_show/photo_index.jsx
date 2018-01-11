@@ -12,6 +12,7 @@ class PhotoIndex extends React.Component {
 
   render () {
     if (this.props.photos) {
+      
       return (
         <main className="photo-index-wrapper">
           {this.props.photos.map((photo) => {

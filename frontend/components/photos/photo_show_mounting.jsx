@@ -14,7 +14,7 @@ class PhotoShowMounting extends React.Component {
     return (
       <main className='album-show-mounting-component'>
             <div className="photo-show-area">PHOTO AREA</div>
-        <img src={window.staticImages.rightChevron}></img>
+        <img src={window.staticImages.rightChevron}/>
       </main>
 
 
@@ -45,4 +45,4 @@ const mapDispatchToProps = (dispatch) => {
 
 
 
-export default connect(mapStateToProps, mapDispatchToProps)(PhotoShowMounting);
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(PhotoShowMounting));

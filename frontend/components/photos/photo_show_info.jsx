@@ -7,9 +7,9 @@ import { withRouter } from 'react-router-dom';
 const PhotoShowInfo = (props) => {
   return (
     <main className='photo-info-wrapper'>
-      <div className='photo-info-title'>{this.props.photo.title}</div>
-      <div className='photo-info-caption'>{this.props.photo.caption}</div>
-      <div className='photo-info-user'>{this.props.user}</div>
+      <div className='photo-info-title'>{props.photo.title}</div>
+      <div className='photo-info-caption'>{props.photo.caption}</div>
+      <div className='photo-info-user'>{props.user}</div>
     </main>
   );
 };
@@ -39,4 +39,4 @@ const mapDispatchToProps = (dispatch) => {
 
 
 
-export default connect(mapStateToProps, mapDispatchToProps)(PhotoShowInfo);
+export default PhotoShowInfo;

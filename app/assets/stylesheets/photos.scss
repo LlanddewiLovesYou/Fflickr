@@ -4,8 +4,81 @@
 .photo-index-wrapper {
   display: flex;
   flex-wrap: wrap;
+  width: 1000px;
+  // border: 1px solid red;
 }
-.index-photo {
-  height: 100px;
-  width: auto;
+
+.component-photo {
+  position: relative;
+  display: flex;
+  margin: 2px;
+  font-size: 7px;
+  text-shadow: none;
+  flex-grow: 2;
+
+}
+
+.component-photo:hover {
+  position: relative;
+  display: flex;
+  margin: 2px;
+  font-size: 7px;
+  text-shadow: 1px 1px #434447;
+  color: white;
+
+
+}
+.component-photo .component-photo-info {
+  display:none;
+}
+
+
+.component-photo img {
+  height: 200px;
+}
+
+.component-photo img:hover {
+  font-size: 10px;
+}
+
+.component-photo .photo-component-info {
+  transition: opacity 2s ease;
+  opacity: 0;
+  position: absolute;
+}
+
+.component-photo:hover .photo-component-info {
+  position: absolute;
+  top: 165px;
+  left: 20px;
+  color: white;
+  opacity:1;
+  display: flex;
+  flex-direction: column;
+}
+
+
+.component-photo-caption {
+  font-size: inherit;
+  font-style: italic;
+}
+
+.component-photo-title {
+  font-size: inherit;
+  margin: 3px
+}
+
+.component-photo-user {
+  font-size: inherit;
+  margin: 3px
+}
+
+.photo-delete-button {
+  padding: 0;
+  font-size: inherit;
+  justify-content: flex-end;
+  display:flex;
+  position: relative;
+  top: 0px;
+  left: 0px;
 }

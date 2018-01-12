@@ -2,14 +2,13 @@ import React from 'react';
 import {Link, NavLink, Switch, Route} from 'react-router-dom';
 import NavBar from '../misc/navbar';
 import UserInfoWrapper from './user_info_wrapper_container';
-import Photostream from './photostream';
 import AlbumIndex from '../albums/album_index_container';
 import AlbumForm from '../albums/album_form_container';
 import Footer from '../misc/footer';
 import AlbumShow from '../albums/album_show_container';
 import PhotoIndex from '../photos/photo_index_container';
 import UserInfoForm from './user_info_form';
-import PhotoStream from './Photostream';
+
 
 class UserShowPage extends React.Component {
 

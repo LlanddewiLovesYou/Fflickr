@@ -14,15 +14,18 @@ class PhotoShowMounting extends React.Component {
 
 
   render () {
-    debugger
+    let photo_url = "";
+    if (this.props.photo) {
+      photo_url = this.props.photo.photo_url
+    }
     return (
       <main className='photo-show-mounting-component'>
 
-        <img src={window.staticImages.leftChevron}/>
+        <img onClick={this.props.clickLeft} src={window.staticImages.leftChevron}/>
 
-          <img src={this.props.photo.photo_url} className="photo-show-area"/>
+          <img src={photo_url} className="photo-show-area"/>
 
-        <img src={window.staticImages.rightChevron}/>
+        <img onClick={this.props.clickRight} src={window.staticImages.rightChevron}/>
 
       </main>
 

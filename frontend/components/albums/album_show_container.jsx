@@ -14,15 +14,13 @@ const photosByAlbum = (album, state) => {
 const mapStateToProps = (state, ownProps) => {
   const album = state.albums[ownProps.match.params.albumId];
   const photos = photosByAlbum(album, state);
-  debugger
+  
   return {
     album,
     albumId: ownProps.match.params.albumId,
     user: state.users[ownProps.match.params.userId],
     userId: ownProps.match.params.userId,
-    photos,
-    photo: photos[0]
-
+    photos
   };
 };
 

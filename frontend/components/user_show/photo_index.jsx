@@ -11,14 +11,14 @@ class PhotoIndex extends React.Component {
 
 
   render () {
+    
     if (this.props.photos) {
-      
+
       return (
         <main className="photo-index-wrapper">
           {this.props.photos.map((photo) => {
             return <PhotoComponent photo={photo}/>;
           })}
-          <Link to={`/users/${this.props.user.id}/photos/new`}>Upload a Photo</Link>
         </main>
       );
       } else {

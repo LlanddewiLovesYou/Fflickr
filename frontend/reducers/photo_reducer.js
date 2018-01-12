@@ -9,7 +9,7 @@ const PhotosReducer = (state = {}, action) => {
   // let USER_PHOTOS;
   switch (action.type) {
     case RECEIVE_ALBUM:
-    debugger
+    
       newState = merge({}, state, action.photos);
       return newState;
     case RECEIVE_PHOTO:

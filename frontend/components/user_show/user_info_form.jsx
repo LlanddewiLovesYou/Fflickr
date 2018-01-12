@@ -9,6 +9,7 @@ class UserInfoForm extends React.Component {
     super(props);
     let form;
     this.state = {
+      id: this.props.userId,
       joined: '',
       occupation: '',
       hometown: '',
@@ -37,7 +38,9 @@ class UserInfoForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     const user = this.state;
-    this.props.updateUser({user});
+    this.props.updateUser(user).then(() => {
+      this.props.history.push(`/users/${this.props.userId}/info`)
+    });
   }
 
 
@@ -60,9 +63,6 @@ class UserInfoForm extends React.Component {
         <form className='user-info-form' onSubmit={this.handleSubmit}>
           <h1 className='user-info-title'>Update User Info</h1>
           <div className='user-info-inputs'>
-          <label>Joined:
-            <input value={this.state.joined} onChange={this.update('joined')} placeholder='Year' type='text'/>
-          </label>
 
           <label>Occupation:
             <input value={this.state.occupation} onChange={this.update('occupation')} placeholder='Occupation' type='text'/>
@@ -91,7 +91,11 @@ class UserInfoForm extends React.Component {
     );
   }
 }
-
+const mapStateToProps = (state, ownProps) => {
+  return {
+    userId: ownProps.match.params.userId
+  }
+}
 
 const mapDispatchToProps = (dispatch) => {
   return {
@@ -99,4 +103,13 @@ const mapDispatchToProps = (dispatch) => {
   };
 };
 
-export default connect(null, mapDispatchToProps)(UserInfoForm);
+export default connect(mapStateToProps, mapDispatchToProps)(UserInfoForm);
+
+
+
+
+
+
+// <label>Joined:
+//   <input value={this.state.joined} onChange={this.update('joined')} placeholder='Year' type='text'/>
+// </label>

@@ -13,7 +13,6 @@ const NavBar = ( { currentUser } ) => {
             <Link to="">Explore</Link>
             <Link to="">Create</Link>
           </div>
-        
         <GreetingContainer/>
     </div>
   );

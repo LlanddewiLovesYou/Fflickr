@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router-dom';
 import NavBar from '../misc/navbar';
+import Dropzone from 'react-dropzone';
 
 class PhotoUploadForm extends React.Component {
 
@@ -9,6 +10,7 @@ class PhotoUploadForm extends React.Component {
     let form;
     this.state = {
       imageFile: null,
+      previewURL: '',
       imageUrl: null,
       caption: null,
       title: null
@@ -34,12 +36,12 @@ class PhotoUploadForm extends React.Component {
     })
   }
 
-  updateFile (e) {
-    const file = e.currentTarget.files[0];
+  updateFile (imageFiles) {
+    const file = imageFiles[0];
     const fileReader = new FileReader();
     const context = this;
     fileReader.onloadend = () => {
-      context.setState({ imageFile: file, imageUrl:fileReader.result})
+      context.setState({ imageFile: file, imageUrl:fileReader.result, previewURL: file.preview})
     }
     if (file) {
       fileReader.readAsDataURL(file);
@@ -76,6 +78,12 @@ class PhotoUploadForm extends React.Component {
 
 
   render() {
+    let dropzoneText = "Drop photo here!";
+    if (this.state.previewURL !== '') {
+      dropzoneText = (
+        <img src={this.state.previewURL} className="dropzone-preview" />
+      )
+    }
     return (
      <main>
        <NavBar/>
@@ -93,10 +101,13 @@ class PhotoUploadForm extends React.Component {
           </label>
 
           <label>Photo:
-            <input type='file' onChange={this.updateFile}></input>
-          </label>
-        </div>
+            <Dropzone multiple={false} accept='image/*' onDrop={this.updateFile} className="dropzone">
+              {dropzoneText}
+            </Dropzone>
+        </label>
+
           <input type='submit' value="UPLOAD" className='photo-upload-button'/>
+        </div>
 
         </form>
       </div>

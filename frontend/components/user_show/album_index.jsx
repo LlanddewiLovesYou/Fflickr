@@ -2,7 +2,7 @@ import React from 'react';
 import {Link} from 'react-router-dom';
 import {connect} from 'react-redux';
 import { withRouter } from 'react-router-dom';
-import AlbumComponent from '../albums/album_component';
+import AlbumComponent from '../albums/album_component_container';
 
 
 class AlbumIndex extends React.Component {
@@ -24,7 +24,7 @@ class AlbumIndex extends React.Component {
               </ul>
               <br></br>
 
-    
+
 
         </main>
       );

@@ -1,7 +1,6 @@
 json.album do
   json.set! @album.id do
     json.partial! "api/albums/album", album: @album
-    json.photoIds @album.photos.pluck(:id)
   end
 end
 

@@ -18,8 +18,9 @@ const personalGreeting = (currentUser, logout, history) => {
   return (
 	<hgroup className="login-signup">
     <div className='login-flex'>
+      <Link to={`/users/${currentUser.id}/photos/new`}><img src={window.staticImages.cloud} className='cloud'/></Link>
       <h2 className="header-name"><Link to={`/users/${currentUser.id}`}>Hi, {currentUser.username}!</Link></h2>
-      <button className="signup" onClick={fancyLogout}>Log Out</button>
+      <button className="logout" onClick={fancyLogout}>Log Out</button>
     </div>
 	</hgroup>
   )

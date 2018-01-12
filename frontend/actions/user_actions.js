@@ -9,3 +9,11 @@ export const receiveUser = (id) => {
     });
   };
 };
+
+export const updateUser = (user) => {
+  return (dispatch) => {
+    return UserApi.updateUser(user).then((payload) => {
+      dispatch({type: RECEIVE_USER, user: payload.user, albums: payload.albums, photos: payload.photos});
+    });
+  };
+}

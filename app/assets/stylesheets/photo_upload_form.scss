@@ -30,13 +30,14 @@
   flex-direction: column;
   justify-content: space-between;
   background-color: white;
+  height: 100%;
 }
 
 .photo-upload-form label {
   padding: 20px;
 }
 
-.photo-upload-form input {
+.photo-upload-form input[type="text"] {
   margin: 10px;
   height: 20px;
   width: 250px;
@@ -49,7 +50,7 @@
   outline-width: 0;
 }
 
-.photo-upload-form input:focus {
+.photo-upload-form input[type="text"]:focus {
   width: 250px;
   border: none;
   border-bottom: 2px solid #4286f4;
@@ -68,13 +69,57 @@
   background-color: #4286f4;
   font-weight: normal;
   // justify-content: flex-end;
-  padding: 7px;
+  padding: 15px;
   border: none;
   border-radius: 4px;
   margin-left: 20px;
-  margin: 20px;
+  margin: 20px auto;
   width: 150px;
   height: 20px;
+  line-height: 3px;
   text-align: center;
+  align-content: center;
+  cursor: pointer;
+  font-size: 15px;
+}
 
+.photo-upload-button:hover {
+  text-decoration: none;
+  color: #4286f4;
+  background-color: #eaecef;
+  border: 1px solid blue;
+  font-weight: normal;
+  // justify-content: flex-end;
+  padding: 15px;
+  border: none;
+  border-radius: 4px;
+  margin-left: 20px;
+  margin: 20px auto;
+  width: 150px;
+  height: 20px;
+  line-height: 3px;
+  text-align: center;
+  align-content: center;
+  cursor: pointer;
+  font-size: 15px;
+}
+.dropzone {
+  border: 1px dotted black;
+  height:200px;
+  width: 80%;
+  margin: 10px auto;
+  position: relative;
+  text-align: center;
+  line-height: 180px;
+  font-style: italic;
+  font-size: 20px;
+
+}
+
+.dropzone-preview {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
 }

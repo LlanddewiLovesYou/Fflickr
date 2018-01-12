@@ -27,7 +27,7 @@ render () {
 
           <span>
               <div className='user-cover-image'>
-
+                <img className="user-show-avatar" src={window.staticImages.defaultAvatar}/>
                 <h1 className='username'>{this.props.user.username}</h1>
                 <h1 className='joined'>Joined 2018</h1>
               </div>

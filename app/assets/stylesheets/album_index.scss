@@ -55,9 +55,23 @@
   font-size: 12px;
   background-color: black;
   color: white;
+  position: relative;
+}
+
+.album-index-text {
+  position: absolute;
+  text-shadow: 1px 1px #434447;
 }
 
 .album-component-wrapper a {
   font-weight: bold;
   margin-left: 5px;
+}
+
+
+.album-component-wrapper img {
+  height: 200px;
+  width: 200px;
+  object-fit: cover;
+
 }

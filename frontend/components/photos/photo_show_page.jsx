@@ -16,7 +16,7 @@ import PhotoShowInfo from './photo_show_info';
    }
 
   render () {
-    debugger
+    
     if (this.props.photo) {
     return (
       <div>

@@ -43,7 +43,7 @@ photo6 = Photo.create!({photo: 'https://s3.amazonaws.com/fflickr-dev/seeds/Peaks
 photoalbs6 = AlbPhoto.create({photo_id: photo6.id, album_id: album2.id})
 
 
-photo7 = Photo.create({photo: 'https://s3.amazonaws.com/fflickr-dev/seeds/Peaks2.jpg', title: 'Casco Bay', user_id: user3.id) })
+photo7 = Photo.create({photo: 'https://s3.amazonaws.com/fflickr-dev/seeds/Peaks2.jpg', title: 'Casco Bay', user_id: user3.id })
 photoalbs7 = AlbPhoto.create({photo_id: photo7.id, album_id: album2.id})
 
 photo8 = Photo.create({photo: 'https://s3.amazonaws.com/fflickr-dev/seeds/Peaks3.jpg', title: 'Sunset', user_id: user3.id })

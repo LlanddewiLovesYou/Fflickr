@@ -4,15 +4,25 @@ import {connect} from 'react-redux';
 import { withRouter } from 'react-router-dom';
 
 
-const PhotoShowInfo = (props) => {
+class PhotoShowInfo extends React.Component {
+
+
+  componentDidMount () {
+    if (this.props.user === undefined)
+    this.props.receiveUser(ownProps.match.params.userId);
+    }
+
+  render () {
   return (
     <main className='photo-info-wrapper'>
-      <div className='photo-info-title'>{props.photo.title}</div>
-      <div className='photo-info-caption'>{props.photo.caption}</div>
-      <div className='photo-info-user'>{props.user}</div>
+      <div className='photo-info-title'>{this.props.photo.title}</div>
+      <div className='photo-info-caption'>{this.props.photo.caption}</div>
+      <div className='photo-info-user'>{this.props.user.username}</div>
     </main>
   );
-};
+}
+
+}
 
 
 
@@ -32,11 +42,12 @@ const mapDispatchToProps = (dispatch) => {
   return {
     requestPhoto: (id) => dispatch(requestPhoto(id)),
     deletePhoto: (id) => dispatch(deletePhoto(id)),
-    updatePhoto: (id) => dispatch(updatePhoto(id))
+    updatePhoto: (id) => dispatch(updatePhoto(id)),
+    receiveUser: (id) => dispatch(receiveUser(id))
   };
 };
 
 
 
 
-export default PhotoShowInfo;
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(PhotoShowInfo));

@@ -20,7 +20,7 @@ class PhotoUploadForm extends React.Component {
   }
 
   componentDidMount() {
-    this.props.receiveUser(this.props.userId)
+    this.props.receiveUser(this.props.userId);
   }
 
   componentWillReceiveProps(nextProps) {
@@ -33,7 +33,7 @@ class PhotoUploadForm extends React.Component {
   update(field) {
     return (e) => this.setState({
       [field]: e.currentTarget.value
-    })
+    });
   }
 
   updateFile (imageFiles) {
@@ -41,8 +41,8 @@ class PhotoUploadForm extends React.Component {
     const fileReader = new FileReader();
     const context = this;
     fileReader.onloadend = () => {
-      context.setState({ imageFile: file, imageUrl:fileReader.result, previewURL: file.preview})
-    }
+      context.setState({ imageFile: file, imageUrl:fileReader.result, previewURL: file.preview});
+    };
     if (file) {
       fileReader.readAsDataURL(file);
     }
@@ -58,7 +58,7 @@ class PhotoUploadForm extends React.Component {
     formData.append('photo[user_id]', this.props.currentUser.id);
     const photo = this.state;
     this.props.createPhoto(formData).then( () => {
-      this.props.history.push(`/users/${this.props.currentUser.id}/photos`)
+      this.props.history.push(`/users/${this.props.currentUser.id}/photos`);
     });
 
   }
@@ -82,7 +82,7 @@ class PhotoUploadForm extends React.Component {
     if (this.state.previewURL !== '') {
       dropzoneText = (
         <img src={this.state.previewURL} className="dropzone-preview" />
-      )
+      );
     }
     return (
      <main>

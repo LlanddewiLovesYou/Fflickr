@@ -11,10 +11,10 @@ class AlbumShow extends React.Component {
 
   constructor(props) {
     super(props);
-    this.state = { display_id: 0 }
+    this.state = { display_id: 0 };
     this.handleClick = this.handleClick.bind(this);
-    this.clickRight = this.clickRight.bind(this)
-    this.clickLeft = this.clickLeft.bind(this)
+    this.clickRight = this.clickRight.bind(this);
+    this.clickLeft = this.clickLeft.bind(this);
   }
 
   componentDidMount() {
@@ -28,19 +28,19 @@ class AlbumShow extends React.Component {
   }
 
   clickRight() {
-    let newIndex = this.state.display_id + 1
+    let newIndex = this.state.display_id + 1;
     if (newIndex >= this.props.photos.length) {
-      newIndex = 0
+      newIndex = 0;
     }
-    this.setState({display_id: newIndex})
+    this.setState({display_id: newIndex});
   }
 
   clickLeft() {
-    let newIndex = this.state.display_id - 1
+    let newIndex = this.state.display_id - 1;
     if (newIndex < 0) {
-      newIndex = this.props.photos.length - 1
+      newIndex = this.props.photos.length - 1;
     }
-    this.setState({display_id: newIndex})
+    this.setState({display_id: newIndex});
   }
 
   render () {
@@ -61,6 +61,7 @@ class AlbumShow extends React.Component {
             </div>
             <div className="album-show-wrapper">
               <h1 className="album-show-title">{this.props.album.title}</h1>
+              <h1 className="album-show-description">{this.props.album.caption}</h1>
               <h1 className="album-show-description">{this.props.album.description}</h1>
               <h1 className="album-show-description">{this.props.user.username}</h1>
                 <div className="album-show-buttons">

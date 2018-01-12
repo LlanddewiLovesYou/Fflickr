@@ -11,11 +11,11 @@ class UserInfoForm extends React.Component {
     this.state = {
       id: this.props.userId,
       joined: '',
-      occupation: '',
-      hometown: '',
-      current_city: '',
-      email: '',
-      website: ''
+      occupation: 'Occupation',
+      hometown: 'Hometown',
+      current_city: 'Current City / Country',
+      email: 'ex. YourAddress@email.com',
+      website: 'ex. www.IHavePhotosHereToo.com'
     };
     this.handleSubmit = this.handleSubmit.bind(this);
   }

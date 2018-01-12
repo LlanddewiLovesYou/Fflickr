@@ -16,13 +16,13 @@ import PhotoShowInfo from './photo_show_info';
    }
 
   render () {
-    
+
     if (this.props.photo) {
     return (
       <div>
         <NavBar/>
         <PhotoShowMountingContainer photo={this.props.photo}/>
-        <PhotoShowInfo photo={this.props.photo}/>
+        <PhotoShowInfo/>
       </div>
     );
   } else {

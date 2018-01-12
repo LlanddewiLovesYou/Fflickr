@@ -22,6 +22,7 @@ import PhotoShowInfo from './photo_show_info';
       <div>
         <NavBar/>
         <PhotoShowMountingContainer photo={this.props.photo}/>
+        <br></br>
         <Link to={`/users/${this.props.userId}/photos`} className='photostream-return-link'><img src={window.staticImages.leftArrowBlack}/>Back to {this.props.user.username}s Photostream</Link>
         <PhotoShowInfo/>
       </div>

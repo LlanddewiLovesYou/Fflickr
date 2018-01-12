@@ -1,36 +1,14 @@
-# README
+Fflickr
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
 
-Things you may want to cover:
+What it does:
+* Like the popular photo-hosting website, only jankier.
 
-* Ruby version
+Link:
+* https://fflickr.herokuapp.com/#/
 
-* System dependencies
+Technologies used:
+* The app is built with a Rails backend which handles primarily requests to the database and renders JSON. The frontend components are built with React-Redux, making use of Amazon Web Services to handle the actual image hosting.
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-webpack
-react
-react-dom
-react-router-dom
-redux
-react-redux
-babel-core
-babel-loader
-babel-preset-react
-babel-preset-es2015
-lodash (optional)
+Features:
+* At the present moment, the app features photos and albums. Users can upload photos through a drag and drop interface accomplished with the ‘dropzone’ library. Users can store a small amount of metadata with their photos including titles and captions. Albums allow a user to group their photos for display, again with metadata about the album itself.  

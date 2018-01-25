@@ -17,7 +17,8 @@ const mapStateToProps = (state, ownProps) => {
   const user = state.users[ownProps.match.params.userId];
   return {
     photos: getPhotosByUser(state, user),
-    user
+    user,
+    selected: state.photos.selected
   };
 };
 

@@ -30,7 +30,6 @@ class PhotoComponent extends React.Component {
 
   selectClick (e) {
     dispatch(selectPhoto(this.props.photo.id))
-    $(this).addClass('selected')
   }
 
   render () {
@@ -38,9 +37,13 @@ class PhotoComponent extends React.Component {
     if (this.props.user){
       username = this.props.user.username;
     }
+    let componentClass = 'component-photo-wrapper'
+    if (this.props.selected === 'true') {
+      componentClass = 'selected-photo'
+    }
 
     return (
-      <main  className="component-photo-wrapper" photo='5' onClick={this.selectClick}>
+      <main  className={componentClass} photo='5' onClick={this.selectClick}>
 
         <div  className="component-photo">
 

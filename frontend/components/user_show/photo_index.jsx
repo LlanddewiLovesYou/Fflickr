@@ -7,7 +7,6 @@ class PhotoIndex extends React.Component {
 
   constructor(props) {
     super(props);
-    this.selection = []
   }
 
 
@@ -22,7 +21,11 @@ class PhotoIndex extends React.Component {
           <div className="photo-index-wrapper">
 
             {this.props.photos.map((photo) => {
-              return <PhotoComponent photo={photo}/>;
+              if (this.props.selected.includes(photo.id)) {
+                return <PhotoComponent photo={photo} selected='true'/>;
+              } else {
+                return <PhotoComponent photo={photo} selected='false'/>;
+              }
             })}
           </div>
         </main>

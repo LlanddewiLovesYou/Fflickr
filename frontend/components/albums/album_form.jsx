@@ -16,7 +16,7 @@ class AlbumForm extends React.Component {
       description: '',
       // photos: [],
     form: '',
-  selected: this.props.selected};
+  photo_ids: this.props.selected};
   }
     this.handleSubmit = this.handleSubmit.bind(this);
   }
@@ -31,9 +31,6 @@ class AlbumForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     const album = this.state;
-    this.state.selected((photoId) => {
-      album.photoIds.push(photoId)
-    })
     this.props.processForm(album).then( () => {
       this.props.history.push(`/users/${this.props.currentUser.id}/albums`);
     })

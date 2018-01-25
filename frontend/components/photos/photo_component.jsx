@@ -1,6 +1,7 @@
 import React from "react";
 import {connect} from 'react-redux';
 import {Link} from 'react-router-dom';
+import {selectPhoto} from '../../actions/photo_actions';
 
 
 
@@ -8,21 +9,28 @@ class PhotoComponent extends React.Component {
 
   constructor(props) {
     super(props);
-    this.handleClick = this.handleClick.bind(this);
-    // this.props.deletePhoto = this.props.deletePhoto.bind(this);
+    this.selectClick = this.selectClick.bind(this)
+    this.deleteClick = this.deleteClick.bind(this)
   }
 
   componentDidMount () {
     if(this.props.user === undefined){
       this.props.receiveUser(this.props.photo.user_id);
+    } else if (this.props.photo === undefined) {
+      this.props.receivePhoto(this.props.photoId)
     }
 
   }
 
-  handleClick (e) {
+  deleteClick (e) {
     this.props.deletePhoto(this.props.photoId).then( () => {
       this.props.history.push(`/users/${this.props.user.id}/photos`);
     });
+  }
+
+  selectClick (e) {
+    dispatch(selectPhoto(this.props.photo.id))
+    $(this).addClass('selected')
   }
 
   render () {
@@ -32,9 +40,7 @@ class PhotoComponent extends React.Component {
     }
 
     return (
-      <main  className="component-photo-wrapper">
-
-        <Link to={`/users/${this.props.userId}/photos/${this.props.photo.id}/show`}>
+      <main  className="component-photo-wrapper" photo='5' onClick={this.selectClick}>
 
         <div  className="component-photo">
 
@@ -44,16 +50,18 @@ class PhotoComponent extends React.Component {
 
               <img className="mini-avatar" src={window.staticImages.defaultAvatar}/>
 
-              <div  className='full-caption'>
-                <span className="component-photo-title">{this.props.photo.title}</span>
-                <span className="component-photo-user">by {username}</span>
-                <a className='photo-delete-button' onClick={this.handleClick}>x Delete</a>
-              </div>
+              <Link to={`/users/${this.props.userId}/photos/${this.props.photo.id}/show`}>
+                <div  className='full-caption'>
+                  <span className="component-photo-title">{this.props.photo.title}</span>
+                  <span className="component-photo-user">by {username}</span>
+                  <a className='photo-delete-button' onClick={this.deleteClick}>x Delete</a>
+                  <a className='photo-select-button' onClick={this.selectClick}>x Delete</a>
+                </div>
+              </Link>
 
             </div>
 
         </div>
-      </Link>
       </main>
     );
   }
@@ -62,3 +70,7 @@ class PhotoComponent extends React.Component {
 
 
 export default PhotoComponent;
+
+
+// this.props.deletePhoto = this.props.deletePhoto.bind(this);
+// this.handleClick = this.handleClick.bind(this);

@@ -1,6 +1,7 @@
 import React from "react";
 import {connect} from 'react-redux';
 import PhotoIndex from '../user_show/photo_index';
+import {selectPhoto} from '../../actions/photo_actions';
 
 
 

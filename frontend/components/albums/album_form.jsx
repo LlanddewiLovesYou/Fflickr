@@ -15,7 +15,8 @@ class AlbumForm extends React.Component {
       title: '',
       description: '',
       // photos: [],
-    form: ''};
+    form: '',
+  selected: this.props.selected};
   }
     this.handleSubmit = this.handleSubmit.bind(this);
   }
@@ -30,6 +31,9 @@ class AlbumForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     const album = this.state;
+    this.state.selected((photoId) => {
+      album.photoIds.push(photoId)
+    })
     this.props.processForm(album).then( () => {
       this.props.history.push(`/users/${this.props.currentUser.id}/albums`);
     })
@@ -58,8 +62,6 @@ class AlbumForm extends React.Component {
       formTitle = 'Edit Album';
     }
 
-
-
     return (
    <main>
       <div className="album-form-container">
@@ -82,7 +84,7 @@ class AlbumForm extends React.Component {
 
             <br/>
 
-              <div className='photo-upload-field'>Drag Photos Here!</div>
+              <div className='photo-upload-field'>"SELECTED PHOTOSTREAM PHOTOS WILL APPEAR HERE"</div>
 
               <input type="submit" value='Submit' className='album-button'/>
 

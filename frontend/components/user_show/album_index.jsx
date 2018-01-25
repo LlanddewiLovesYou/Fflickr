@@ -15,8 +15,7 @@ class AlbumIndex extends React.Component {
     if (this.props.user) {
       return (
         <main className="album-index-wrapper">
-          <Link to={`/users/${this.props.user.id}/newalbum`} className='new-album-button'>Create New Album</Link>
-
+        
               <ul className='album-index'>
                 {this.props.albums.map((album) => {
                   return <AlbumComponent album={album} />;

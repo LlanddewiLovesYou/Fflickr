@@ -1,16 +1,16 @@
 import merge from 'lodash/merge';
-import {RECEIVE_PHOTOS, RECEIVE_PHOTO, REMOVE_PHOTO} from '../actions/photo_actions';
+import {RECEIVE_PHOTOS, RECEIVE_PHOTO, REMOVE_PHOTO, SELECT_PHOTO} from '../actions/photo_actions';
 import {RECEIVE_USER} from '../actions/user_actions';
 import {RECEIVE_ALBUM} from '../actions/album_actions';
 
 
-const PhotosReducer = (state = {}, action) => {
+const PhotosReducer = (state = {selected: []}, action) => {
   let newState;
   // let USER_PHOTOS;
   switch (action.type) {
     case RECEIVE_ALBUM:
-    
       newState = merge({}, state, action.photos);
+      newState.selected = []
       return newState;
     case RECEIVE_PHOTO:
       newState = merge({}, state, {[action.photo.id]: action.photo});
@@ -19,6 +19,12 @@ const PhotosReducer = (state = {}, action) => {
       newState = merge({}, state);
       delete newState[action.photo.id];
       return newState;
+    case SELECT_PHOTO:
+      newState = merge({}, state)
+      if (!newState.selected.includes(action.photoId)) {
+        newState.selected.push(action.photoId)
+      }
+      return newState
     case RECEIVE_USER:
       newState = merge({}, state, action.photos);
       return newState;

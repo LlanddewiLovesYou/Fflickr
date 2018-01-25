@@ -11,7 +11,6 @@ const albumsReducer = (state = {}, action) => {
       newState = merge({}, state, action.albums);
       return newState;
     case RECEIVE_ALBUM:
-    
       newState = merge({}, state, action.album);
       return newState;
     case REMOVE_ALBUM:
@@ -24,3 +23,6 @@ const albumsReducer = (state = {}, action) => {
 };
 
 export default albumsReducer;
+
+
+// newState = merge({}, newState, selected: [])

@@ -9,6 +9,7 @@ class Api::AlbumsController < ApplicationController
     else
       render json: @album.errors.full_messages, status: 422
     end
+
   end
 
   def show
@@ -41,7 +42,7 @@ class Api::AlbumsController < ApplicationController
   private
 
   def album_params
-    params.require(:album).permit(:photo_id, :title, :description)
+    params.require(:album).permit(:title, :description, photo_ids: [])
   end
 
 end

@@ -8,7 +8,6 @@ import {requestPhoto} from '../../actions/photo_actions';
 
 const mapStateToProps = (state, ownProps) => {
 
-
   const user = state.users[ownProps.match.params.userId];
   return {
     user,
@@ -22,7 +21,7 @@ const mapDispatchToProps = (dispatch) => {
     requestPhoto: (id) => dispatch(requestPhoto(id)),
     deletePhoto: (id) => dispatch(deletePhoto(id)),
     updatePhoto: (id) => dispatch(updatePhoto(id)),
-    receiveUser:  (id) => dispatch(receiveUser(id))
+    receiveUser:  (id) => dispatch(receiveUser(id)),
   };
 };
 

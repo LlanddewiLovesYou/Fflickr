@@ -6,6 +6,7 @@
   flex-wrap: wrap;
   width: 1000px;
   align-items: stretch;
+  margin-top: 30px;
   // border: 1px solid red;
 }
 
@@ -117,4 +118,8 @@
   display: flex;
   flex-direction: column;
   padding-left: 10px;
+}
+
+.selected {
+  border: 1px solid #64646b;
 }

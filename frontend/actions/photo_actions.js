@@ -1,6 +1,7 @@
 export const RECEIVE_PHOTOS = 'RECEIVE_PHOTOS';
 export const RECEIVE_PHOTO = 'RECEIVE_PHOTO';
 export const REMOVE_PHOTO = 'REMOVE_PHOTO';
+export const SELECT_PHOTO = 'SELECT_PHOTO';
 
 import * as PhotoApi from '../util/photos_api_util';
 
@@ -13,10 +14,14 @@ export const requestPhoto = (id) => {
   };
 };
 
+export const selectPhoto = (id) => {
+  return ({type: SELECT_PHOTO, photoId: id});
+}
+
 export const createPhoto = (photo) => {
   return (dispatch) => {
     return PhotoApi.createPhoto(photo).then((payload) => {
-      
+
       dispatch({type: RECEIVE_PHOTO, photo: payload.photo});
     });
   };

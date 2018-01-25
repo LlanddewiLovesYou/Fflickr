@@ -21,6 +21,7 @@ const mapStateToProps = (state, ownProps) => {
     currentUser: state.session.currentUser,
     album,
     formType,
+    selected: state.photos.selected
   };
 };
 
@@ -28,7 +29,7 @@ const mapStateToProps = (state, ownProps) => {
 const mapDispatchToProps = (dispatch, ownProps) => {
   let processForm;
   if (ownProps.location.pathname.split('/').reverse()[0] === 'newalbum') {
-    
+
     processForm = createAlbum;
   } else {
     processForm = updateAlbum;

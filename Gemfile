@@ -42,7 +42,7 @@ group :development, :test do
   gem 'capybara', '~> 2.13'
   gem 'selenium-webdriver'
   gem 'better_errors'
-  gem 'binding_of_caller'
+  # gem 'binding_of_caller'
   gem 'pry-rails'
   gem 'annotate'
 end

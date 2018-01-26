@@ -27,16 +27,17 @@ class Api::PhotosController < ApplicationController
   end
 
   def update
-    @photo = current_user.albums.find(params[:id])
+    @photo = current_user.photos.find(params[:id])
     if @photo.update(album_params)
-      render :show
+      render 'api/photos/show'
+      # render :show
     else
       render json: @photo.errors.full_messages, status: 422
     end
   end
 
   def destroy
-    @photo = current_user.albums.find(params[:id])
+    @photo = current_user.photos.find(params[:id])
     if @photo.delete
       render 'api/photos/show'
     else

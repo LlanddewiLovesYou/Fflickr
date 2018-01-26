@@ -43,7 +43,7 @@ class PhotoComponent extends React.Component {
     }
 
     return (
-      <main  className={componentClass} photo='5' onClick={this.selectClick}>
+      <main  className={componentClass} onClick={this.selectClick}>
 
         <div  className="component-photo">
 

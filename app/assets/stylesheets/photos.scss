@@ -13,7 +13,7 @@
 .component-photo {
   position: relative;
   display: flex;
-  margin: 2px;
+  margin: 3px;
   font-size: 7px;
   text-shadow: 1px 1px #434447;
   flex-grow: 2;
@@ -23,7 +23,7 @@
 .component-photo:hover {
   position: relative;
   display: flex;
-  margin: 2px;
+  margin: 3px;
   font-size: 7px;
   text-shadow: 1px 1px #434447;
   color: white;
@@ -121,5 +121,5 @@
 }
 
 .selected-photo {
-  border: 1px solid #64646b;
+  border: 2px solid #4286f4;
 }

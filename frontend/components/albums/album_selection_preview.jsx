@@ -1,5 +1,7 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router-dom';
+import {connect} from 'react-redux';
+import PhotoComponent from "../photos/photo_component"
 
 class AlbumSelectionPreview extends React.Component {
 
@@ -9,18 +11,20 @@ class AlbumSelectionPreview extends React.Component {
   }
 
   render () {
-    <main>
-      {this.props.selected.map((photoId) => {
-        return <PhotoComponent classname="thumbnail" photo={state.photos.photoId}/>;
-      })}
-    </main>
+    return (
+      <main className="album-preview">
+        {this.props.selected.map((photoId) => {
+          return <PhotoComponent classname="thumbnail" photo={this.props.selected.photoId}/>;
+        })}
+      </main>
+    )
   }
 
 }//class AlbumSelectionPreview
 
 const mapStateToProps = (state, ownProps) => {
   return {
-    selected: state.selected
+    selected: state.photos.selected
   };
 };
 

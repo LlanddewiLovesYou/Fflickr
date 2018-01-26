@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router-dom';
+import AlbumSelectionPreview from './album_selection_preview'
 
 class AlbumForm extends React.Component {
   constructor(props) {
@@ -81,7 +82,6 @@ class AlbumForm extends React.Component {
 
             <br/>
 
-              <div className='photo-upload-field'>"SELECTED PHOTOSTREAM PHOTOS WILL APPEAR HERE"</div>
 
               <input type="submit" value='Submit' className='album-button'/>
 
@@ -94,3 +94,7 @@ class AlbumForm extends React.Component {
 }
 
 export default AlbumForm;
+
+// <div className='photo-upload-field'>
+//   <AlbumSelectionPreview/>
+// </div>

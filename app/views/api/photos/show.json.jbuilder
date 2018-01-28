@@ -19,3 +19,12 @@ end
 json.photo do
   json.partial! 'api/photos/photo', photo: @photo, user: @user
 end
+
+json.comments do
+  @photo.comments.each do |comment|
+    json.set! comment.id do
+      json.extract! comment, :id, :body, :photo_id, :user_id
+    end
+  end
+end
+# {comments: {comment.id: {body: comment.body, photo_id: comment.photo_id...}}

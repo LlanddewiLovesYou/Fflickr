@@ -22,6 +22,7 @@ after_initialize :ensure_session_token
 
 has_many :albums
 has_many :photos
+has_many :comments
 
 
 def self.find_by_credentials(username, password)

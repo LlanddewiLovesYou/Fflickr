@@ -3,6 +3,7 @@ import { Link, withRouter } from 'react-router-dom';
 import PhotoShowMountingContainer from './photo_show_mounting_container';
 import NavBar from '../misc/navbar';
 import PhotoShowInfo from './photo_show_info';
+import CommentSection from '../comments/comment_section_container'
 
 
  class PhotoShowPage extends React.Component {
@@ -25,6 +26,7 @@ import PhotoShowInfo from './photo_show_info';
         <br></br>
         <Link to={`/users/${this.props.userId}/photos`} className='photostream-return-link'><img src={window.staticImages.leftArrowBlack}/>Back to {this.props.user.username}s Photostream</Link>
         <PhotoShowInfo/>
+        <CommentSection/>
       </div>
     );
   } else {

@@ -3,6 +3,7 @@ class Photo < ApplicationRecord
   validates_attachment_content_type :photo, content_type: /\Aimage\/.*\z/
 
   belongs_to :user
+  has_many :comments
   has_many :alb_photos
   has_many :albums,
     through: :alb_photos,

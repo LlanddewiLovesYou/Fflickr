@@ -1,39 +1,35 @@
 class Api::CommentsController < ApplicationController
 
   def create
-    @comment = Comment.new(comment_params)
+    @user = current_user
+    @photo = Photo.find(params[:photo_id])
+    @comment = @photo.comments.new
     @comment.user_id = current_user.id
-    @comment.photo_id = comment_params[:photo_id]
     @comment.body = comment_params[:body]
     if @comment.save
-      render 'api/comments/show'
+      render 'api/photos/show'
     else
       render json: @photo.errors.full_messages, status: 422
     end
   end
 
-  def show
-    @comment = Photo.find(params[:id])
-    if @comment
-      render 'api/comments/show'
-    else
-      render json: @comment.errors.full_messages, status: 422
-    end
-  end
-
   def update
+    @user = current_user
     @comment = current_user.comments.find(params[:id])
+    @photo = @comment.photo
     if @comment.update(comment_params)
-      render 'api/comment/show'
+      render 'api/photos/show'
     else
       render json: @comment.errors.full_messages, status: 422
     end
   end
 
   def destroy
+    @user = current_user
     @comment = current_user.comments.find(params[:id])
+    @photo = @comment.photo
     if @comment.delete
-      render 'api/comment/show'
+      render 'api/photos/show'
     else
       render json: @comment.errors.full_messages, status: 422
     end

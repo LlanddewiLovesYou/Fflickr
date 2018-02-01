@@ -3,8 +3,15 @@
 export const createComment = (comment) => {
   return $.ajax({
     method:'POST',
-    url: 'api/comments',
-    data: comment
+    url: `api/photos/${comment.photo_id}/comments`,
+    data: {comment}
+  })
+}
+
+export const fetchComment = (id) => {
+  return $.ajax({
+    method: 'GET',
+    url: `api/comments/${id}`
   })
 }
 

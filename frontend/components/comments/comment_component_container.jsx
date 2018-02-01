@@ -2,6 +2,8 @@ import React from "react";
 import {connect} from 'react-redux';
 import CommentComponent from './comment_component';
 import {withRouter} from 'react-router-dom';
+import {createComment, updateComment, deleteComment} from '../../actions/comment_actions'
+
 
 const mapStateToProps = (state, ownProps) => {
 
@@ -11,12 +13,12 @@ const mapStateToProps = (state, ownProps) => {
   }
 }
 
-const mapDispatchToProps = (dispatch,ownProps) => {
+const mapDispatchToProps = (dispatch, ownProps) => {
+  debugger
   return {
-    createComment: (comment) => {dispatch(createComment(comment))},
-    updateComment: (comment) => {dispatch(updateComment(comment))},
-    deleteComment: (commentId) => {dispatch(deleteComment(commentId))}
-
+    createComment: (comment) => dispatch(createComment(comment)),
+    deleteComment: (commentId) => dispatch(deleteComment(commentId)),
+    updateComment: (comment) => dispatch(updateComment(comment))
   }
 }
 

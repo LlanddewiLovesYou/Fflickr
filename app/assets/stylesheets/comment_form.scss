@@ -1,0 +1,28 @@
+.comment-form-wrapper {
+  width: 1000px;
+  margin: 0 auto;
+  flex-direction: column;
+  justify-content: center;
+
+}
+
+.comment-input {
+  width: 900px;
+  height: 30px;
+  margin: 30px;
+  font-size: 20px;
+  font-family: sans-serif;
+  padding-left: 2px;
+}
+
+.comment-button {
+  text-decoration: none;
+  color: white;
+  background-color: #4286f4;
+  font-weight: normal;
+  // justify-content: flex-end;
+  padding: 7px;
+  border-radius: 4px;
+  margin-left: 22px;
+  margin: 20px;
+}

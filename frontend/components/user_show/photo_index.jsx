@@ -21,6 +21,7 @@ class PhotoIndex extends React.Component {
           <div className="photo-index-wrapper">
 
             {this.props.photos.map((photo) => {
+      
               if (this.props.selected.includes(photo.id)) {
                 return <PhotoComponent photo={photo} selected='true'/>;
               } else {

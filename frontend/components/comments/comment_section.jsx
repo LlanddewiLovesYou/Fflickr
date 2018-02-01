@@ -1,7 +1,10 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import {Link} from 'react-router-dom';
-import CommentComponent from './comment_component'
+import CommentComponent from './comment_component_container';
+import CommentForm from './comment_form_container';
+// import CommentSection from './comment_section_container'
+
 
 class CommentSection extends React.Component {
 
@@ -19,6 +22,7 @@ class CommentSection extends React.Component {
       <main className="comment-section">
         <div className="comments-header">Comments:</div>
         {comments}
+        <CommentForm/>
       </main>
     )
   }

@@ -6,11 +6,18 @@ import * as CommentApi from '../util/comments_api_util';
 export const createComment = (comment) => {
   return (dispatch) => {
     return CommentApi.createComment(comment).then((payload) => {
-      dispatch({type: RECEIVE_COMMENT, comment: payload.comment })
+      dispatch({type: RECEIVE_COMMENT, comments: payload.comments, photo: payload.photo })
     })
   }
 }
 
+export const receiveComment = (id) => {
+  return (dispatch) => {
+    return CommentApi.fetchComment(id).then( (comment) => {
+      dispatch({type: RECEIVE_COMMENT, comment})
+    })
+  }
+}
 
 export const updateComment = (comment) => {
   return (dispatch) => {
@@ -22,8 +29,8 @@ export const updateComment = (comment) => {
 
 export const deleteComment = (commentId) => {
   return (dispatch) => {
-    return CommentApi.deleteComment(commentId).then((comment) => {
-      dispatch({type: REMOVE_COMMENT, comment})
+    return CommentApi.deleteComment(commentId).then((payload) => {
+      dispatch({type: REMOVE_COMMENT, comments: payload.comments, photo: payload.photo})
     })
   }
 }

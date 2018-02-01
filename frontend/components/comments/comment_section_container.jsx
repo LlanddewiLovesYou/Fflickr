@@ -8,8 +8,9 @@ const mapStateToProps = (state, ownProps) => {
   const comments = photo.comment_ids.map((id) => {
     return state.comments[id]
   })
+  debugger
   const users = comments.map((comment) => {
-    return state.users[comment.user_id]
+    return state.users[comment.user.id]
   })
   return {
     photo,

@@ -6,6 +6,7 @@ import PhotoShowInfo from './photo_show_info';
 import CommentSection from '../comments/comment_section_container'
 
 
+
  class PhotoShowPage extends React.Component {
 
    constructor(props) {
@@ -27,6 +28,7 @@ import CommentSection from '../comments/comment_section_container'
         <Link to={`/users/${this.props.userId}/photos`} className='photostream-return-link'><img src={window.staticImages.leftArrowBlack}/>Back to {this.props.user.username}s Photostream</Link>
         <PhotoShowInfo/>
         <CommentSection/>
+        
       </div>
     );
   } else {

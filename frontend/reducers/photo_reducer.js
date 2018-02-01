@@ -2,6 +2,7 @@ import merge from 'lodash/merge';
 import {RECEIVE_PHOTOS, RECEIVE_PHOTO, REMOVE_PHOTO, SELECT_PHOTO} from '../actions/photo_actions';
 import {RECEIVE_USER} from '../actions/user_actions';
 import {RECEIVE_ALBUM} from '../actions/album_actions';
+import {REMOVE_COMMENT, RECEIVE_COMMENT} from '../actions/comment_actions'
 
 
 const PhotosReducer = (state = {selected: []}, action) => {
@@ -13,12 +14,18 @@ const PhotosReducer = (state = {selected: []}, action) => {
       newState.selected = []
       return newState;
     case RECEIVE_PHOTO:
-      newState = merge({}, state, {[action.photo.id]: action.photo});
+      newState = merge({}, state, {[action.photo.id]: action.photo})
       return newState;
     case REMOVE_PHOTO:
       newState = merge({}, state);
       delete newState[action.photo.id];
       return newState;
+    case RECEIVE_COMMENT:
+      newState = merge({}, state, {[action.photo.id]: action.photo})
+      return newState;
+    case REMOVE_COMMENT:
+    newState = merge({}, state, {[action.photo.id]: action.photo})
+    return newState;
     case SELECT_PHOTO:
       newState = merge({}, state)
       if (!newState.selected.includes(action.photoId)) {

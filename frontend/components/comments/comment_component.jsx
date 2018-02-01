@@ -1,13 +1,23 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import {Link} from 'react-router-dom';
+import {createComment, updateComment, deleteComment} from '../../actions/comment_actions'
 
 
 class CommentComponent extends React.Component {
 
   constructor(props) {
     super(props)
+    this.deleteClick = this.deleteClick.bind(this)
+    // this.props.deleteComment = this.props.deleteComment.bind(this)
   }
+
+  deleteClick(e) {
+  debugger
+    this.props.deleteComment(this.props.comment.id)
+
+  }
+
 
   render() {
 
@@ -27,7 +37,7 @@ class CommentComponent extends React.Component {
 
         <div className='comment-action-links'>
           <Link to='#' className='comment-edit'>Edit</Link>
-          <Link to='#' className="comment-delete">Delete</Link>
+          <button onClick={this.deleteClick} className="comment-delete">Delete</button>
         </div>
 
 

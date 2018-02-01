@@ -44,5 +44,11 @@
   "bugs": {
     "url": "https://github.com/LlanddewiLovesYou/Fflickr/issues"
   },
-  "homepage": "https://github.com/LlanddewiLovesYou/Fflickr#readme"
+  "homepage": "https://github.com/LlanddewiLovesYou/Fflickr#readme",
+  "devDependencies": {
+    "eslint-config-airbnb": "^16.1.0",
+    "eslint-plugin-import": "^2.8.0",
+    "eslint-plugin-jsx-a11y": "^6.0.3",
+    "eslint-plugin-react": "^7.6.1"
+  }
 }

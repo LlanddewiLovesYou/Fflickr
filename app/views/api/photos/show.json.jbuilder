@@ -1,8 +1,8 @@
-json.user do
-  json.set! @user.id do
-    json.partial! "api/users/user", user: @user
-  end
-end
+# json.user do
+#   json.set! @user.id do
+#     json.partial! "api/users/user", user: @user
+#   end
+# end
 
 # {user:{1: @user}}
 
@@ -28,3 +28,11 @@ json.comments do
   end
 end
 # {comments: {comment.id: {body: comment.body, photo_id: comment.photo_id...}}
+
+json.user do
+  @users.each do |user|
+    json.set! user.id do
+      json.partial! "api/users/user", user: user
+    end
+  end
+end

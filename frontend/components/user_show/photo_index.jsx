@@ -14,20 +14,22 @@ class PhotoIndex extends React.Component {
   render () {
 
     if (this.props.photos) {
+      const photos = this.props.photos.map((photo) => {
+        if (photo) {
+
+          if (this.props.selected.includes(photo.id)) {
+            return <PhotoComponent photo={photo} selected='true'/>;
+          } else {
+            return <PhotoComponent photo={photo} selected='false'/>;
+          }
+        }
+      })
 
       return (
         <main>
           <Link to={`/users/${this.props.user.id}/newalbum`} className='new-album-button'>Create Album From Selection</Link>
           <div className="photo-index-wrapper">
-
-            {this.props.photos.map((photo) => {
-      
-              if (this.props.selected.includes(photo.id)) {
-                return <PhotoComponent photo={photo} selected='true'/>;
-              } else {
-                return <PhotoComponent photo={photo} selected='false'/>;
-              }
-            })}
+            {photos}
           </div>
         </main>
       );

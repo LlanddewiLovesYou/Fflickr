@@ -2,6 +2,7 @@ class Api::CommentsController < ApplicationController
 
   def create
     @user = current_user
+    @users = User.all
     @photo = Photo.find(params[:photo_id])
     @comment = @photo.comments.new
     @comment.user_id = current_user.id
@@ -15,6 +16,7 @@ class Api::CommentsController < ApplicationController
 
   def update
     @user = current_user
+    @users = User.all
     @comment = current_user.comments.find(params[:id])
     @photo = @comment.photo
     if @comment.update(comment_params)
@@ -26,6 +28,7 @@ class Api::CommentsController < ApplicationController
 
   def destroy
     @user = current_user
+    @users = User.all
     @comment = current_user.comments.find(params[:id])
     @photo = @comment.photo
     if @comment.delete

@@ -2,6 +2,7 @@ class Api::PhotosController < ApplicationController
 
   def create
     @photo = Photo.new(photo_params)
+    @users = User.all
 
     @photo.user_id = current_user.id
     if photo_params[:album_id]
@@ -18,7 +19,9 @@ class Api::PhotosController < ApplicationController
 
   def show
     @photo = Photo.find(params[:id])
+    @users = User.all
     @user = User.find(@photo.user_id)
+
     if @photo
       render 'api/photos/show'
     else
@@ -28,6 +31,7 @@ class Api::PhotosController < ApplicationController
 
   def update
     @photo = current_user.photos.find(params[:id])
+    @users = User.all
     if @photo.update(album_params)
       render 'api/photos/show'
       # render :show
@@ -38,6 +42,7 @@ class Api::PhotosController < ApplicationController
 
   def destroy
     @photo = current_user.photos.find(params[:id])
+    @users = User.all
     if @photo.delete
       render 'api/photos/show'
     else

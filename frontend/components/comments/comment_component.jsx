@@ -9,17 +9,19 @@ class CommentComponent extends React.Component {
   constructor(props) {
     super(props)
     this.deleteClick = this.deleteClick.bind(this)
+
     // this.props.deleteComment = this.props.deleteComment.bind(this)
   }
 
   deleteClick(e) {
-  debugger
+
     this.props.deleteComment(this.props.comment.id)
 
   }
 
 
   render() {
+
 
     return (
       <main className="comment-component">
@@ -28,6 +30,7 @@ class CommentComponent extends React.Component {
         <div className='comment-user-wrapper'>
           <img src={window.staticImages.defaultAvatar}></img>
           <Link to={`/users/${this.props.comment.user_id}`} className='comment-username'>{this.props.user.username}</Link>
+
         </div>
 
 

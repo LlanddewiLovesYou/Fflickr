@@ -9,12 +9,13 @@ const mapStateToProps = (state, ownProps) => {
 
   return {
     photo: state.photos[ownProps.match.params.photoId],
-    comments: state.photos.comment_ids
+    comments: state.photos.comment_ids,
+    users: state.users.user_ids
   }
 }
 
 const mapDispatchToProps = (dispatch, ownProps) => {
-  debugger
+   
   return {
     createComment: (comment) => dispatch(createComment(comment)),
     deleteComment: (commentId) => dispatch(deleteComment(commentId)),

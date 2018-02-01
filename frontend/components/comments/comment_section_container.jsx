@@ -4,13 +4,20 @@ import CommentSection from './comment_section';
 import {withRouter} from 'react-router-dom';
 
 const mapStateToProps = (state, ownProps) => {
+
   const photo = state.photos[ownProps.match.params.photoId]
   const comments = photo.comment_ids.map((id) => {
-    return state.comments[id]
+    if (state.comments[id]) {
+      return state.comments[id]
+    }
   })
-  debugger
   const users = comments.map((comment) => {
-    return state.users[comment.user.id]
+
+    if (comment){
+      return state.users[comment.user_id]
+    } else {
+      return {username: 'Anonymous'}
+    }
   })
   return {
     photo,

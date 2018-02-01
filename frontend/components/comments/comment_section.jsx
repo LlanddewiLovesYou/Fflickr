@@ -14,8 +14,12 @@ class CommentSection extends React.Component {
 
   render() {
   const users = this.props.users
+
+
   const comments = this.props.comments.map((comment, idx) => {
-      return <CommentComponent key={comment.id} comment={comment} user={users[idx]}/>
+      if (comment) {
+        return <CommentComponent key={comment.id} comment={comment} user={users[idx]}/>
+      }
     })
 
     return (

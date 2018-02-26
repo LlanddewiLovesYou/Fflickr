@@ -12,7 +12,6 @@ const mapStateToProps = (state, ownProps) => {
     }
   })
   const users = comments.map((comment) => {
-
     if (comment){
       return state.users[comment.user_id]
     } else {

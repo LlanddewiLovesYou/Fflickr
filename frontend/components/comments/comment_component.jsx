@@ -14,14 +14,14 @@ class CommentComponent extends React.Component {
   }
 
   deleteClick(e) {
-
+    e.preventDefault()
     this.props.deleteComment(this.props.comment.id)
+    delete this.props.comments[this.props.comment.id]
 
   }
 
 
   render() {
-
 
     return (
       <main className="comment-component">
@@ -39,8 +39,7 @@ class CommentComponent extends React.Component {
 
 
         <div className='comment-action-links'>
-          <Link to='#' className='comment-edit'>Edit</Link>
-          <button onClick={this.deleteClick} className="comment-delete">Delete</button>
+          <button onClick={this.deleteClick} ref='deleteButton'className="comment-delete">Delete</button>
         </div>
 
 
@@ -50,5 +49,6 @@ class CommentComponent extends React.Component {
   }
 
 }
+// <Link to='#' className='comment-edit'>Edit</Link>
 
 export default CommentComponent

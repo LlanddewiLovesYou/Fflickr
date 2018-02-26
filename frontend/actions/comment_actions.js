@@ -28,9 +28,10 @@ export const updateComment = (comment) => {
 }
 
 export const deleteComment = (commentId) => {
+  debugger
   return (dispatch) => {
     return CommentApi.deleteComment(commentId).then((payload) => {
-      dispatch({type: REMOVE_COMMENT, comments: payload.comments, photo: payload.photo})
+      dispatch({type: REMOVE_COMMENT, commentId, comments: payload.comments, photo: payload.photo})
     })
   }
 }

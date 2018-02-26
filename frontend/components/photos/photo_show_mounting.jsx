@@ -21,8 +21,11 @@ class PhotoShowMounting extends React.Component {
     return (
       <main className='photo-show-mounting-component'>
 
+        <img onClick={this.props.clickLeft} src={window.staticImages.leftChevron}/>
 
           <img src={photo_url} className="photo-show-area"/>
+
+        <img onClick={this.props.clickRight} src={window.staticImages.rightChevron}/>
 
 
       </main>
@@ -36,9 +39,3 @@ class PhotoShowMounting extends React.Component {
 }
 
 export default PhotoShowMounting;
-
-
-// <img onClick={this.props.clickLeft} src={window.staticImages.leftChevron}/>
-
-
-// <img onClick={this.props.clickRight} src={window.staticImages.rightChevron}/>

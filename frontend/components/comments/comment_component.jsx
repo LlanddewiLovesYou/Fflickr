@@ -22,6 +22,8 @@ class CommentComponent extends React.Component {
 
 
   render() {
+    if (this.props.comment.user_id === currentUser.id) {
+
 
     return (
       <main className="comment-component">
@@ -30,7 +32,6 @@ class CommentComponent extends React.Component {
         <div className='comment-user-wrapper'>
           <img src={window.staticImages.defaultAvatar}></img>
           <Link to={`/users/${this.props.comment.user_id}`} className='comment-username'>{this.props.user.username}</Link>
-
         </div>
 
 
@@ -41,11 +42,30 @@ class CommentComponent extends React.Component {
         <div className='comment-action-links'>
           <button onClick={this.deleteClick} ref='deleteButton'className="comment-delete">Delete</button>
         </div>
-
-
-
       </main>
     )
+      } else {
+        return (
+          <main className="comment-component">
+
+
+          <div className='comment-user-wrapper'>
+            <img src={window.staticImages.defaultAvatar}></img>
+            <Link to={`/users/${this.props.comment.user_id}`} className='comment-username'>{this.props.user.username}</Link>
+
+          </div>
+
+
+
+          <div className='comment-body'>{this.props.comment.body}</div>
+        </main>
+
+      )
+
+      }
+
+
+
   }
 
 }

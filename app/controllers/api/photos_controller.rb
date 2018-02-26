@@ -17,6 +17,11 @@ class Api::PhotosController < ApplicationController
     end
   end
 
+  def index
+    @photos = Photo.all.limit(50)
+    render 'api/photos/index'
+  end
+
   def show
     @photo = Photo.find(params[:id])
     @users = User.all

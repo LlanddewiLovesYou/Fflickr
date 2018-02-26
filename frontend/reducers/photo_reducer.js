@@ -13,6 +13,9 @@ const PhotosReducer = (state = { selected: [] }, action) => {
   let newState;
   // let USER_PHOTOS;
   switch (action.type) {
+    case RECEIVE_PHOTOS:
+      newState = merge({}, state, {photos: action.photos})
+      return newState
     case RECEIVE_ALBUM:
       newState = merge({}, state, action.photos);
       newState.selected = [];
@@ -27,9 +30,6 @@ const PhotosReducer = (state = { selected: [] }, action) => {
     case RECEIVE_COMMENT:
       newState = merge({}, state, { [action.photo.id]: action.photo });
       return newState;
-    // case REMOVE_COMMENT:
-    // newState = merge({}, state, {[action.photo.id]: action.photo})
-    // return newState;
     case SELECT_PHOTO:
       newState = merge({}, state);
       if (!newState.selected.includes(action.photoId)) {

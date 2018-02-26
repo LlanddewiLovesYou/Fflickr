@@ -10,7 +10,7 @@ const NavBar = ( { currentUser } ) => {
         <div className='Navbar-Logo'><Link to='/'>Fflickr</Link></div>
           <div className="nav-links">
             <Link to={`/users/${currentUser.id}`}>You</Link>
-            <Link to="">Explore</Link>
+            <Link to="/explore">Explore</Link>
             <Link to="">Create</Link>
           </div>
         <GreetingContainer/>

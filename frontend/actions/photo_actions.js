@@ -14,6 +14,14 @@ export const requestPhoto = (id) => {
   };
 };
 
+export const requestExplore = () => {
+  return (dispatch) => {
+    return PhotoApi.fetchPhotos().then((payload) => {
+      dispatch({type: RECEIVE_PHOTOS, photos: payload.photos})
+    })
+  }
+}
+
 export const selectPhoto = (id) => {
   return ({type: SELECT_PHOTO, photoId: id});
 }

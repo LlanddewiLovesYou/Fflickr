@@ -34,6 +34,7 @@ class PhotoComponent extends React.Component {
 
   render () {
     let username = "";
+
     if (this.props.user){
       username = this.props.user.username;
     }
@@ -57,8 +58,7 @@ class PhotoComponent extends React.Component {
                 <div  className='full-caption'>
                   <span className="component-photo-title">{this.props.photo.title}</span>
                   <span className="component-photo-user">by {username}</span>
-                  <a className='photo-delete-button' onClick={this.deleteClick}>x Delete</a>
-                  <a className='photo-select-button' onClick={this.selectClick}>x Delete</a>
+                  <a className='photo-delete-button' onClick={this.selectClick}>x Delete</a>
                 </div>
               </Link>
 

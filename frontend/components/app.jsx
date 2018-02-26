@@ -16,6 +16,7 @@ import Footer from './misc/footer';
 import AlbumShow from './albums/album_show_container';
 import PhotoIndex from './photos/photo_index_container';
 import PhotoUploadForm from './photos/photo_upload_container';
+import Explore from './photos/explore_container'
 
 
 const App = () => (
@@ -24,6 +25,7 @@ const App = () => (
   </header>
   <Switch>
     <Route exact path='/' component={SplashPage} />
+    <Route exact path='/explore' component={Explore} />
     <AuthRoute path="/login" component={LoginPage}  />
     <AuthRoute path="/signup" component={NewUserPage} />
     <Route exact path='/users/:userId/albums/:albumId' component={AlbumShow}/>

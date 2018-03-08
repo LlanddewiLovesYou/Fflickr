@@ -8,6 +8,10 @@ class Photo < ApplicationRecord
   has_many :albums,
     through: :alb_photos,
     source: :album
+  has_many :taggings
+  has_many :tags,
+    through: :taggings,
+    source: :tag
 end
 
 

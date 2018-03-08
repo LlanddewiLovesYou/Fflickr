@@ -7,6 +7,7 @@ Rails.application.routes.draw do
         resources :comments, only: [:create]
       end
       resources :comments, except: [:index, :new, :edit, :create]
+      resources :tags, except: [:new, :index, :edit, :update]
     end
 
     root to: "static_pages#root"

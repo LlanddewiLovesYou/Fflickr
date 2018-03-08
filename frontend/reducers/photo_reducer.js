@@ -34,6 +34,10 @@ const PhotosReducer = (state = { selected: [] }, action) => {
       newState = merge({}, state);
       if (!newState.selected.includes(action.photoId)) {
         newState.selected.push(action.photoId);
+      } else if (newState.selected.includes(action.photoId)) {
+        newState.selected = newState.selected.filter((el) => {
+          return el !== action.photoId
+        })
       }
       return newState;
     case RECEIVE_USER:

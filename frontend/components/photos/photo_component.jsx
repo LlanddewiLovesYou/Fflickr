@@ -16,11 +16,13 @@ class PhotoComponent extends React.Component {
   componentDidMount () {
     if(this.props.user === undefined){
       this.props.receiveUser(this.props.photo.user_id);
-    } else if (this.props.photo === undefined) {
+    }
+    if (this.props.photo === undefined) {
       this.props.receivePhoto(this.props.photoId)
     }
-
   }
+
+
 
   deleteClick (e) {
     this.props.deletePhoto(this.props.photoId).then( () => {
@@ -33,16 +35,16 @@ class PhotoComponent extends React.Component {
   }
 
   render () {
-    let username = "";
+    let username = this.props.username
 
-    if (this.props.user){
-      username = this.props.user.username;
-    }
+    // if (this.props.user){
+    //   username = this.props.user.username;
+    // }
     let componentClass = 'component-photo-wrapper'
     if (this.props.selected === 'true') {
       componentClass = 'selected-photo'
     }
-
+    // debugger
     return (
       <main  className={componentClass} onClick={this.selectClick}>
 

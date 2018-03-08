@@ -17,8 +17,8 @@ class Explore extends React.Component {
       return (
         <main>
           <NavBar />
-          <div>photos are here!</div>
-          <ul>{Object.keys(this.props.photos).map((photoId) => {
+          <div className='explore-title'>Explore</div>
+          <ul className='explore-wrapper'>{Object.keys(this.props.photos).map((photoId) => {
             return <PhotoComponent photo={this.props.photos[photoId]}/>
           })}</ul>
         </main>

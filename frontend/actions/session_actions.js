@@ -23,6 +23,7 @@ export const logOut = (user) => {
 
 
 export const newUser = (user) => {
+  // console.log('literally anything')
   return (dispatch) => {
     return SessionApi.newUser(user).then((user) => {
 

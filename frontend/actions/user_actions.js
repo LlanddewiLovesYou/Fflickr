@@ -1,5 +1,6 @@
 export const RECEIVE_USER = 'RECEIVE_USER';
 import * as UserApi from '../util/user_api_util';
+import * as SessionApi from '../util/session_api_util';
 
 
 export const receiveUser = (id) => {

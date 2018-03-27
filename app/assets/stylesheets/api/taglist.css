@@ -51,12 +51,12 @@
 }
 
 .tag-item {
-  flex-direction: row-reverse;
+  flex-direction: row;
   /* background-color: #64646b; */
   border: 1px solid black;
   padding: 5px;
   width: fit-content;
-  max-width: 95px;
+  /* max-width: 95px; */
   border-radius: 5px;
   margin: 3px;
   justify-content: center;
@@ -67,4 +67,15 @@
   background-color: #4286f4;
   color: white;
   border: 1px solid #4286f4;
+}
+
+.delete-tag {
+  display:inline;
+
+}
+
+.delete-tag:hover {
+  color: red;
+  display:inline;
+  font-weight: bold;
 }

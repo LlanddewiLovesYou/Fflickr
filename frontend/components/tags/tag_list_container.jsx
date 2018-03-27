@@ -1,7 +1,7 @@
 import React from "react";
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
-import { createTag } from '../../actions/tags_actions';
+import { createTag, deleteTag } from '../../actions/tags_actions';
 import TagList from './tag_list'
 
 export const mapStateToProps = (state, ownProps) => {
@@ -12,7 +12,8 @@ export const mapStateToProps = (state, ownProps) => {
 
 export const mapDispatchToProps = (dispatch) => {
   return {
-    createTag: (tagname, photoId) => dispatch(createTag(tagname, photoId))
+    createTag: (tagname, photoId) => dispatch(createTag(tagname, photoId)),
+    deleteTag: (tagname) => dispatch(deleteTag(tagname))
   }
 }
 

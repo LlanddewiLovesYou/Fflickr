@@ -18,3 +18,11 @@ export const fetchTag = (tagname) => {
     })
   }
 }
+
+export const deleteTag = (tagname) => {
+  return (dispatch) => {
+    return TagsApi.fetchTag(tagname).then((payload) => {
+      dispatch({type: RECEIVE_TAG, tag: payload.tag, photos: payload.photos})
+    })
+  }
+}

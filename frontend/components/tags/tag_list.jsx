@@ -21,6 +21,9 @@ class TagList extends React.Component {
     this.props.createTag(this.state.tagname, this.props.photoId)
   }
 
+  deleteClick() {
+
+  }
 
   render() {
     if (this.props.tags) {
@@ -34,7 +37,7 @@ class TagList extends React.Component {
           <h3 className='tag-title'>Tags:</h3>
           {this.props.tags.map((tag) => {
             if (tag) {
-              return <Link to={`/tags/${tag.tagname}`}><div className='tag-item'>x {tag.tagname}</div></Link>
+              return <Link to={`/tags/${tag.tagname}`}><div className='tag-item'><div onClick={this.props.deleteClick} className='delete-tag'>x </div>{tag.tagname}</div></Link>
             }
           })}
         </div>

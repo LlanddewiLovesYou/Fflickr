@@ -8,6 +8,7 @@ import {
 import { RECEIVE_USER } from "../actions/user_actions";
 import { RECEIVE_ALBUM } from "../actions/album_actions";
 import { REMOVE_COMMENT, RECEIVE_COMMENT } from "../actions/comment_actions";
+import { RECEIVE_TAG } from '../actions/tags_actions'
 
 const PhotosReducer = (state = { selected: [] }, action) => {
   let newState;
@@ -43,6 +44,9 @@ const PhotosReducer = (state = { selected: [] }, action) => {
     case RECEIVE_USER:
       newState = merge({}, state, action.photos);
       return newState;
+    case RECEIVE_TAG:
+      newState = merge({}, state, action.photos);
+      return newState
     default:
       return state;
   }

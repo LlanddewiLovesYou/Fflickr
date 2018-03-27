@@ -7,11 +7,18 @@ import {requestPhoto} from '../../actions/photo_actions';
 
 
 const mapStateToProps = (state, ownProps) => {
-
-  const user = state.users[ownProps.match.params.userId];
+  let user;
+  let userId;
+  if (ownProps.match.params.userId) {
+    user = state.users[ownProps.match.params.userId];
+    userId = ownProps.match.params.userId
+  } else {
+    user = state.users[ownProps.photo.user_id]
+    userId = ownProps.photo.user_id
+  }
   return {
     user,
-    userId: ownProps.match.params.userId
+    userId
   };
 };
 

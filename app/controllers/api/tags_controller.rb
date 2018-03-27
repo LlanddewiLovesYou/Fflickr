@@ -1,14 +1,10 @@
 class Api::TagsController < ApplicationController
 
-  # def new
-  #   render :new
-  # end
-
   def create
-    @tag = Tag.new(tag_params)
-    @tag.user_id = current_user.id
-    @tag.photo_ids.push(params[:id])
-    @photo = Photo.find[:photo_id]
+    @tag = Tag.new
+    @tag.tagname = tag_params[:tagname]
+    @photos = [Photo.find(tag_params[:photo_id])]
+    @tag.photos = @photos
     if @tag.save
       render 'api/tags/show'
     else
@@ -17,7 +13,7 @@ class Api::TagsController < ApplicationController
   end
 
   def show
-    @tag = Tag.find(params[:id])
+    @tag = Tag.find_by_tagname(params[:id])
     @photos = @tag.photos
     if @photos
       render 'api/tags/show'
@@ -26,11 +22,10 @@ class Api::TagsController < ApplicationController
     end
   end
 
-
   private
 
   def tag_params
-      params.require(:tag).permit(:tagname, photo_ids: [])
+      params.require(:tag).permit(:tagname, :photo_id)
   end
 
 end

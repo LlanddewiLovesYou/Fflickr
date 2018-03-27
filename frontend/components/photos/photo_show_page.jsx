@@ -3,7 +3,8 @@ import { Link, withRouter } from 'react-router-dom';
 import PhotoShowMountingContainer from './photo_show_mounting_container';
 import NavBar from '../misc/navbar';
 import PhotoShowInfo from './photo_show_info';
-import CommentSection from '../comments/comment_section_container'
+import CommentSection from '../comments/comment_section_container';
+import TagList from '../tags/tag_list_container'
 
 
 
@@ -18,7 +19,6 @@ import CommentSection from '../comments/comment_section_container'
    }
 
   render () {
-
     if (this.props.photo) {
     return (
       <div>
@@ -26,9 +26,11 @@ import CommentSection from '../comments/comment_section_container'
         <PhotoShowMountingContainer photo={this.props.photo}/>
         <br></br>
         <Link to={`/users/${this.props.userId}/photos`} className='photostream-return-link'><img src={window.staticImages.leftArrowBlack}/>Back to {this.props.user.username}s Photostream</Link>
-        <PhotoShowInfo/>
+        <div className='photo-show-widgets'>
+          <PhotoShowInfo className='photo-show-info'/>
+          <TagList className='photo-tag-widget' tags={this.props.tags}/>
+        </div>
         <CommentSection/>
-        
       </div>
     );
   } else {

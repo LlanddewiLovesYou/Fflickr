@@ -35,11 +35,10 @@ class PhotoComponent extends React.Component {
   }
 
   render () {
-    let username = this.props.username
-
-    // if (this.props.user){
-    //   username = this.props.user.username;
-    // }
+    let username
+    if (this.props.user){
+     username = this.props.user.username;
+    }
     let componentClass = 'component-photo-wrapper'
     if (this.props.selected === 'true') {
       componentClass = 'selected-photo'

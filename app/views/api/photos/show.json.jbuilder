@@ -36,3 +36,11 @@ json.user do
     end
   end
 end
+
+json.tags do
+  @photo.tags.each do |tag|
+    json.set! tag.id do
+      json.extract! tag, :id, :tagname
+    end
+  end
+end

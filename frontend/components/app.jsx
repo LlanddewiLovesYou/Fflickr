@@ -16,7 +16,8 @@ import Footer from './misc/footer';
 import AlbumShow from './albums/album_show_container';
 import PhotoIndex from './photos/photo_index_container';
 import PhotoUploadForm from './photos/photo_upload_container';
-import Explore from './photos/explore_container'
+import Explore from './photos/explore_container';
+import TagShowContainer from './tags/tag_show_page_container'
 
 
 const App = () => (
@@ -32,6 +33,7 @@ const App = () => (
     <Route exact path='/users/:userId/photos/new' component={PhotoUploadForm}/>
     <Route exact path="/users/:userId/photos/:photoId/show" component={PhotoShowContainer} />
     <Route path="/users/:userId" component={UserShowContainer} />
+    <Route path="/tags/:tagname" component={TagShowContainer} />
   </Switch>
 
 </main>

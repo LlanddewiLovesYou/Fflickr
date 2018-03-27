@@ -1,0 +1,70 @@
+.taglist-wrapper {
+  /* margin: 10px; */
+  grid-column: 3;
+  grid-row: 2;
+  justify-self: end;
+  /* display: flex; */
+}
+
+
+.new-tag-input {
+  border: none;
+  border-bottom: 1px solid black;
+  font-size: 20px;
+  font-family: "Montserrat", sans-serif;
+  /* border-radius: 5px */
+  height: 30px;
+}
+
+.tag-submit {
+  flex-direction: row-reverse;
+  background-color: #4286f4;
+  padding: 10px;
+  width: fit-content;
+  /* max-width: 95px; */
+  border-radius: 5px;
+  margin: 5px;
+  color: white;
+  border: 1px solid  #4286f4;
+}
+
+.tag-submit:hover {
+  background-color: white;
+  color: #4286f4;
+  border: 1px solid #4286f4;
+}
+
+.tag-list-area {
+  display: flex;
+  /* width: 300px; */
+  flex-wrap: wrap;
+  /* justify-content: center; */
+  margin-top: 20px;
+}
+
+.tag-title {
+  font-size: 20px;
+  font-weight: bold;
+  justify-content: center;
+  /* align-items: center; */
+  padding:5px;
+}
+
+.tag-item {
+  flex-direction: row-reverse;
+  /* background-color: #64646b; */
+  border: 1px solid black;
+  padding: 5px;
+  width: fit-content;
+  max-width: 95px;
+  border-radius: 5px;
+  margin: 3px;
+  justify-content: center;
+
+}
+
+.tag-item:hover {
+  background-color: #4286f4;
+  color: white;
+  border: 1px solid #4286f4;
+}

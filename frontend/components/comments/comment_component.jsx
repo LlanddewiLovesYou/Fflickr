@@ -36,10 +36,8 @@ class CommentComponent extends React.Component {
 
 
 
-        <div className='comment-body'>{this.props.comment.body}</div>
-
-
         <div className='comment-action-links'>
+          <div className='comment-body'>{this.props.comment.body}</div>
           <button onClick={this.deleteClick} ref='deleteButton'className="comment-delete">Delete</button>
         </div>
       </main>

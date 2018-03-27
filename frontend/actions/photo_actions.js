@@ -9,7 +9,7 @@ import * as PhotoApi from '../util/photos_api_util';
 export const requestPhoto = (id) => {
   return (dispatch) => {
     return PhotoApi.fetchPhoto(id).then((payload) => {
-      dispatch({type: RECEIVE_PHOTO, photo: payload.photo, album: payload.album, user: payload.user, comments: payload.comments});
+      dispatch({type: RECEIVE_PHOTO, photo: payload.photo, album: payload.album, user: payload.user, comments: payload.comments, tags: payload.tags});
     });
   };
 };

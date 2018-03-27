@@ -5,11 +5,20 @@ import {requestPhoto} from '../../actions/photo_actions';
 import {withRouter} from 'react-router-dom';
 
 const mapStateToProps = (state, ownProps) => {
+
+  let photo = state.photos[ownProps.match.params.photoId]
+  let tags = []
+  if (photo) {
+    tags = photo.tag_ids.map((tag_id) => {
+      return state.tags[tag_id]
+    })
+  }
   return {
-    photo: state.photos[ownProps.match.params.photoId],
+    photo,
     user: state.users[ownProps.match.params.userId],
     photoId: ownProps.match.params.photoId,
-    userId: ownProps.match.params.userId
+    userId: ownProps.match.params.userId,
+    tags
   };
 };
 

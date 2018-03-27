@@ -8,6 +8,7 @@ import users from './user_reducer';
 import albums from './albums_reducer';
 import photos from './photo_reducer';
 import comments from './comment_reducer';
+import tags from './tags_reducer';
 
 const rootReducer = combineReducers({
   session,
@@ -15,7 +16,8 @@ const rootReducer = combineReducers({
   users,
   albums,
   photos,
-  comments
+  comments,
+  tags
 });
 
 export default rootReducer;

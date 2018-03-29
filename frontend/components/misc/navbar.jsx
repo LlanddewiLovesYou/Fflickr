@@ -7,7 +7,7 @@ import {connect} from 'react-redux'
 const NavBar = ( { currentUser } ) => {
   return (
     <div className='navbar'>
-        <div className='Navbar-Logo'><Link to='/'>Fflickr</Link></div>
+        <div className='Navbar-Logo'><Link to='/explore'>Fflickr</Link></div>
           <div className="nav-links">
             <Link to={`/users/${currentUser.id}`}>You</Link>
             <Link to="/explore">Explore</Link>

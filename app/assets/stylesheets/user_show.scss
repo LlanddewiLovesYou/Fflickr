@@ -66,11 +66,19 @@
 
 }
 
+.navlink-bar .link:hover {
+  margin-left: 50px;
+  color: black;
+  text-decoration: none;
+  border-bottom: 2px solid #b2b2ba;
+
+}
+
 .active {
   margin-left: 50px;
   color: black;
   text-decoration: none;
-  border-bottom: 2px solid blue;
+  border-bottom: 2px solid #4286f4;
 }
 
 .user-show-component {

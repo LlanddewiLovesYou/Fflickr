@@ -1,6 +1,7 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
-import {AuthNavbar} from '../auth/auth_navbar';
+import NavBar from '../misc/navbar'
+// import {AuthNavbar} from '../auth/auth_navbar';
 import {connect} from 'react-redux';
 import Footer from '../misc/footer';
 
@@ -22,7 +23,7 @@ const SplashPage = (props) => {
   <main>
         <div className='bg'>
 
-            <AuthNavbar/>
+            <NavBar/>
 
             <div className="inspiration-wrapper">
               <h1 className='inspiration-text'> Find your inspiration. </h1>

@@ -25,6 +25,7 @@
   padding-top: 8px;
   padding-left: 8px;
   font-family: sans-serif;
+  visibility: hidden;
 }
 
 .Searchbar img {
@@ -39,7 +40,7 @@
   font-size: 15px;
   font-family: sans-serif;
   text-align: right;
-  font-weight: bold;
+  // font-weight: 900;
   margin-right: 85px;
   // justify-content: flex-end;
   font-style: normal;
@@ -48,6 +49,13 @@
 .login-signup a {
   text-decoration: none;
   color: white;
+  font-weight: normal;
+  // justify-content: flex-end;
+}
+
+.login-signup a:hover {
+  text-decoration: none;
+  color: #b2b2ba;
   font-weight: normal;
   // justify-content: flex-end;
 }
@@ -71,7 +79,7 @@
   color: white;
   font-size: 22px;
   font-family: 'Montserrat', sans-serif;
-  // font-weight: 600;
+  // font-weight: 900;
   font-weight: bold;
   padding: 15px;
   padding-left: 85px;
@@ -82,13 +90,21 @@
 
 .logout {
   margin-left: 23px;
-  width: 68px;
-  padding: 7px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: normal;
+  padding: 10px;
   border-radius: 2px;
   cursor: pointer;
   background-color:white;
   color:black;
-  // border: 1px solid red;
+  border: 1px solid white;
+}
+
+.logout:hover {
+  border: 1px solid white;
+  background-color: black;
+  color:white;
+
 }
 
 

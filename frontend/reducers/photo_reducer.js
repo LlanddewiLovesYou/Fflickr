@@ -45,7 +45,7 @@ const PhotosReducer = (state = { selected: [] }, action) => {
       newState = merge({}, state, action.photos);
       return newState;
     case RECEIVE_TAG:
-      newState = merge({}, state, action.photos);
+      newState = Object.assign({}, state, action.photos);
       return newState
     default:
       return state;

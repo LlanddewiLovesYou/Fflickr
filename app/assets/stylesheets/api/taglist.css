@@ -8,6 +8,7 @@
 
 
 .new-tag-input {
+  margin-top: 20px;
   border: none;
   border-bottom: 1px solid black;
   font-size: 20px;
@@ -39,7 +40,6 @@
   /* width: 300px; */
   flex-wrap: wrap;
   /* justify-content: center; */
-  margin-top: 20px;
 }
 
 .tag-title {
@@ -71,11 +71,13 @@
 
 .delete-tag {
   display:inline;
+  cursor:pointer;
 
 }
 
 .delete-tag:hover {
   color: red;
-  display:inline;
-  font-weight: bold;
+  /* background-color: red; */
+  /* border-radius: 50%; */
+  display: inline;
 }

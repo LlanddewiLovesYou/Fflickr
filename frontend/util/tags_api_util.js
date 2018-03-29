@@ -14,9 +14,10 @@ export const createTag = (tagname, photo_id) => {
   })
 }
 
-export const deleteTag = (tagname) => {
+export const deleteTag = (tagname, photoId) => {
   return $.ajax({
     method: 'DELETE',
-    url: `api/tags/${tagname}`
+    url: `api/tags/${tagname}`,
+    data: {photoId}
   })
 }

@@ -13,7 +13,7 @@ export const mapStateToProps = (state, ownProps) => {
 export const mapDispatchToProps = (dispatch) => {
   return {
     createTag: (tagname, photoId) => dispatch(createTag(tagname, photoId)),
-    deleteTag: (tagname) => dispatch(deleteTag(tagname))
+    deleteTag: (tagname, photoId) => dispatch(deleteTag(tagname, photoId))
   }
 }
 

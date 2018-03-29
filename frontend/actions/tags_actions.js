@@ -19,9 +19,9 @@ export const fetchTag = (tagname) => {
   }
 }
 
-export const deleteTag = (tagname) => {
+export const deleteTag = (tagname, photoId) => {
   return (dispatch) => {
-    return TagsApi.fetchTag(tagname).then((payload) => {
+    return TagsApi.deleteTag(tagname, photoId).then((payload) => {
       dispatch({type: RECEIVE_TAG, tag: payload.tag, photos: payload.photos})
     })
   }
